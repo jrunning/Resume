@@ -1,9 +1,9 @@
-## Used for parsing markdown docs in the resume.yml
 require 'maruku'
+## Used for parsing markdown docs in the resume.yml
 ## Pdfmaker custom extension
 require 'makepdf'
 
-
+activate :livereload
 ###
 # Compass
 ###
