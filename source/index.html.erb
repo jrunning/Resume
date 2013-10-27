@@ -19,7 +19,7 @@
 
         <div id="hd">
           <address class="vcard">
-            <div class="yui-gc">
+            <section class="yui-gc">
               <div class="yui-u first">
                 <h1 class="fn"><%= data.resume.info.name %></h1>
                 <h2><%= data.resume.info.shortdesc %></h2>
@@ -31,10 +31,10 @@
                   <h3><a class="email" href="mailto:<%= data.resume.info.email %>"><%= data.resume.info.email %></a></h3>
                   <% if data.resume.info.homepage? %>
                     <h3 class="url"><%= data.resume.info.homepage %></h3>
-                  <% end %>
+                <% end %>
                   <% if data.resume.info.phone %>
                     <h3 class="tel"><%= data.resume.info.phone %></h3>
-                  <% end %>
+                <% end %>
                   <span class="adr">
                     <h3>
                       <span class="street-address"><%= data.resume.info.address.street %></span>
@@ -47,141 +47,138 @@
                     </h3>
                   </div><!--// .contact-info -->
                 </div>
-              </div><!--// .yui-gc -->
+              </section><!--// .yui-gc -->
             </address>
           </div><!--// hd -->
 
           <div id="bd">
-            <div id="yui-main">
-              <div class="yui-b">
+            <div class="yui-b">
+              <section class="yui-gf">
+                <div class="yui-u first">
+                  <h2><%= data.resume.headers.profile %></h2>
+                </div>
+                <div class="yui-u">
+                  <p class="summary"><%= Maruku.new(data.resume.info.desc).to_html %></p>
+                </div>
+              </section><!--// .yui-gf -->
 
-                <div class="yui-gf">
-                  <div class="yui-u first">
-                    <h2><%= data.resume.headers.profile %></h2>
+              <section class="yui-gf">
+                <div class="yui-u first">
+                  <h2><%= data.resume.headers.skills %></h2>
+                </div>
+                <div class="yui-u">
+                  <% data.resume.skills.each do |skill| %>
+                    <div class="talent">
+                    <h2><%= skill.name %></h2>
+                    <p><%= skill.desc %></p>
                   </div>
-                  <div class="yui-u">
-                    <p class="summary"><%= Maruku.new(data.resume.info.desc).to_html %></p>
-                  </div>
-                </div><!--// .yui-gf -->
-
-                <div class="yui-gf">
-                  <div class="yui-u first">
-                    <h2><%= data.resume.headers.skills %></h2>
-                  </div>
-                  <div class="yui-u">
-                    <% data.resume.skills.each do |skill| %>
-                      <div class="talent">
-                        <h2><%= skill.name %></h2>
-                        <p><%= skill.desc %></p>
-                      </div>
-                    <% end %>
-                  </div>
-                </div><!--// .yui-gf -->
-
-                <div class="yui-gf no-page-breaker">
-                  <div class="yui-u first">
-                    <h2><%= data.resume.headers.techs %></h2>
-                  </div>
-                  <div class="yui-u">
-                    <% data.resume.alphabetsoup.each.with_index do |skill, index| %>
-                      <% if (index + 1) % 3 == 1 %>
-                        <ul class="soup">
-                      <% end %>
-
-                      <li class="skill" rel="tag"><%= skill %></li>
-
-                      <% if (index + 1) % 3 == 0 %>
-                        </ul>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div><!--// .yui-gf-->
-
-                <div class="yui-gf">
-                  <div class="yui-u first">
-                    <h2><%= data.resume.headers.jobs %></h2>
-                  </div><!--// .yui-u -->
-
-                  <div class="yui-u vcalendar">
-                    <% data.resume.jobs.each do |job| %>
-                      <div class="job no-page-breaker experience vevent">
-                        <h2 class="location"><%= job.company %></h2>
-                        <h3 class="summary"><%= job.title %></h3>
-                        <h4>
-                          <abbr class="dtstart" title="<%= job.dates.start %>"><%= display_date(job.dates.start) %></abbr> -
-                          <abbr class="dtend" title="<%= job.dates.end %>"><%= display_date(job.dates.end) %></abbr>
-                        </h4>
-                        <p><%= Maruku.new(job.desc).to_html %></p>
-                      </div>
-                    <% end %>
-                  </div><!--// .yui-u -->
-                </div><!--// .yui-gf -->
-
-                <% if data.resume.education? %>
-                  <div class="yui-gf">
-                    <div class="yui-u first">
-                      <h2><%= data.resume.headers.education %></h2>
-                    </div>
-                    <div class="yui-u" class="vcalendar">
-                      <div class="no-page-breaker">
-                        <% data.resume.education.each do |edu| %>
-                          <span class="education vevent summary vcard">
-                          <h2 class="fn org"><%= edu.name %>, 
-                            <span class="adr">
-                              <span class="locality"><%= edu.city %></span> - <span class="region"><%= edu.region %></span>
-                              <% if edu.country? %>
-                                <span class="country"> <%= edu.country %></span>
-                              <% end %>
-                            </span>
-                          </h2>
-                          <h4>
-                            <abbr class="dtstart" title="<%= edu.dates.start %>"><%= display_date(edu.dates.start) %></abbr>
-                            <% if edu.dates.end? %>
-                              - <abbr class="dtend" title="<%= edu.dates.end %>"><%= display_date(edu.dates.end) %></abbr>
-                            <% end %>
-                          </h4>
-                          <h3><%= edu.title %> &nbsp; <strong><%= edu.grade if edu.grade? %></strong> </h3>
-                        </span>
-                      <% end %>
-                      </div>
-                    </div>
-                  </div><!--// .yui-gf -->
                 <% end %>
+                </div>
+              </section><!--// .yui-gf -->
 
-                <% if data.resume.languages? %>
-                  <div class="yui-gf">
-                  <div class="yui-u first">
-                    <h2><%= data.resume.headers.languages %></h2>
-                  </div><!--// .yui-u -->
+              <section class="yui-gf no-page-breaker">
+                <div class="yui-u first">
+                  <h2><%= data.resume.headers.techs %></h2>
+                </div>
+                <div class="yui-u">
+                  <% data.resume.alphabetsoup.each.with_index do |skill, index| %>
+                    <% if (index + 1) % 3 == 1 %>
+                    <ul class="soup">
+                  <% end %>
 
-                  <div class="yui-u">
-                    <% data.resume.languages.each do |lang| %>
-                      <div class="talent">
+                    <li class="skill" rel="tag"><%= skill %></li>
+
+                    <% if (index + 1) % 3 == 0 %>
+                    </ul>
+                <% end %>
+                <% end %>
+                </div>
+              </section><!--// .yui-gf-->
+
+              <section class="yui-gf no-page-breaker">
+                <div class="yui-u first">
+                  <h2><%= data.resume.headers.jobs %></h2>
+                </div><!--// .yui-u -->
+
+                <div class="yui-u vcalendar">
+                  <% data.resume.jobs.each do |job| %>
+                    <div class="job no-page-breaker experience vevent">
+                    <h2 class="location"><%= job.company %></h2>
+                    <h3 class="summary"><%= job.title %></h3>
+                    <h4>
+                      <abbr class="dtstart" title="<%= job.dates.start %>"><%= display_date(job.dates.start) %></abbr> -
+                      <abbr class="dtend" title="<%= job.dates.end %>"><%= display_date(job.dates.end) %></abbr>
+                    </h4>
+                    <p><%= Maruku.new(job.desc).to_html %></p>
+                  </div>
+                <% end %>
+                </div><!--// .yui-u -->
+              </section><!--// .yui-gf -->
+
+              <% if data.resume.education? %>
+                <section class="yui-gf">
+                <div class="yui-u first">
+                  <h2><%= data.resume.headers.education %></h2>
+                </div>
+                <div class="yui-u" class="vcalendar">
+                  <div class="no-page-breaker">
+                    <% data.resume.education.each do |edu| %>
+                      <span class="education vevent summary vcard">
+                      <h2 class="fn org"><%= edu.name %>,
+                        <span class="adr">
+                          <span class="locality"><%= edu.city %></span> - <span class="region"><%= edu.region %></span>
+                          <% if edu.country? %>
+                            <span class="country"> <%= edu.country %></span>
+                        <% end %>
+                        </span>
+                      </h2>
+                      <h4>
+                        <abbr class="dtstart" title="<%= edu.dates.start %>"><%= display_date(edu.dates.start) %></abbr>
+                        <% if edu.dates.end? %>
+                          - <abbr class="dtend" title="<%= edu.dates.end %>"><%= display_date(edu.dates.end) %></abbr>
+                      <% end %>
+                      </h4>
+                      <h3><%= edu.title %> &nbsp; <strong><%= edu.grade if edu.grade? %></strong> </h3>
+                    </span>
+                  <% end %>
+                  </div>
+                </div>
+              </section><!--// .yui-gf -->
+            <% end %>
+
+            <% if data.resume.languages? %>
+              <section class="yui-gf">
+                <div class="yui-u first">
+                  <h2><%= data.resume.headers.languages %></h2>
+                </div><!--// .yui-u -->
+
+                <div class="yui-u">
+                  <% data.resume.languages.each do |lang| %>
+                    <div class="talent">
                       <h2><%= lang.name %></h2>
                       <p><%= lang.level %></p>
                     </div>
-                    <% end %>
-                  </div><!--// .yui-u -->
-                </div><!--// .yui-gf -->
-              <% end %>
+                  <% end %>
+                </div><!--// .yui-u -->
+              </section><!--// .yui-gf -->
+            <% end %>
 
-                <div class="yui-gf last">
+            <section class="yui-gf last">
+              <div class="yui-u first">
+                <h2><%= data.resume.headers.links %></h2>
+              </div><!--// .yui-u -->
 
-                  <div class="yui-u first">
-                    <h2><%= data.resume.headers.links %></h2>
-                  </div><!--// .yui-u -->
+              <div class="yui-u">
+                <ul class="talent no-page-breaker">
+                  <% data.resume.links.each do |link| %>
+                    <li><%= link_to link.name, link.url %></li>
+                  <% end %>
+                </ul>
+              </div><!--// .yui-u -->
+            </section><!--// .yui-gf -->
 
-                  <div class="yui-u">
-                    <ul class="talent no-page-breaker">
-                      <% data.resume.links.each do |link| %>
-                        <li><%= link_to link.name, link.url %></li>
-                      <% end %>
-                    </ul>
-                  </div><!--// .yui-u -->
-                </div><!--// .yui-gf -->
-
-              </div><!--// .yui-b -->
-            </div><!--// yui-main -->
+            </div><!--// .yui-b -->
+            <!--// yui-main -->
           </div><!--// bd -->
 
           <div id="ft">
