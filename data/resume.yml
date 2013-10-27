@@ -1,93 +1,171 @@
 headers:
-    profile: Profile
-    skills: Skills
-    languages: Languages
-    techs: Technical
-    jobs: Experiences
-    education: Education
-    links: Links
-    download: Download PDF
+  profile:    What I Do
+  skills:     How I Do It
+  techs:      What I Use
+  jobs:       What I've Done
+  education:  Where I Studied
+  links:      Where To Find Me
+  download:   Download PDF
 
 info:
-    name: Full Name
-    shortdesc: Job Title
-    email: example@example.com
-    phone: (313) - 867-5309 # not mandatory
-    homepage: http://example.com/ # not mandatory
-    address:
-        street: 123 Fake Street
-        city: City
-        region: Region # not mandatory
-        postal_code: 12345 # not mandatory
-        country: Country # not mandatory
-    desc: |
-        Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change.
+  name:       Jordan Running
+  shortdesc:  I Make Web Apps.
+  email:      jr@jordanrunning.com
+  phone:      (925) 567-3267
+  homepage:   http://jordanrunning.com/
+  address:
+    # street: 123 Fake Street
+    city:   Iowa City, Iowa
+    # region: IA
+  desc: |
+    I solve problems using technology.
 
+      
 skills:
-    - name: Web design
-      desc: Assertively exploit wireless initiatives rather than synergistic core competencies.
-    - name: Interface Design
-      desc: Credibly streamline mission-critical value with multifunctional functionalities.
-    - name: Project Direction
-      desc: Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.
+  - name: Front-End Craftsmanship
+    desc: |
+      A flawless back-end isn't worth building if the user experience is
+      frustrating and inconsistent. Modern tools and methodology let me put the
+      user first as a rule, not an exception.
 
-languages:
-    - name: Gibberish
-      level: Native language
-    - name: Manager Speak
-      level: Fluent
+  - name: Back-End Fundamentals
+    desc: |
+      Expertise in Ruby and Ruby on Rails lets me do great work, but also tells
+      me when they're not the best tools for the job, and my diverse background
+      gives me the ability to pick up the tools I don't yet know, quickly.
+
+  - name: Communication & Collaboration
+    desc: |
+      Writing and speaking clearly about complex and subtle ideas is essential
+      to being an effective team member, as is recognizing my teammates'
+      strengths as well as opportunities to share my own skills and knowledge.
 
 alphabetsoup:
-    - XHTML
-    - CSS
-    - Javascript
+  - [ JavaScript            ,  •••• ]
+  - [ Backbone.js           ,   ••• ]
+  - [ jQuery                ,  •••• ]
+  - [ RequireJS             ,    •• ]
 
-    - Jquery
-    - PHP
-    - CVS / Subversion
+  - [ Ruby 2.0              ,  •••• ]
+  - [ Ruby on Rails 3.2     ,  •••• ]
 
-    - OS X
-    - Windows XP/Vista
-    - Linux
+  - [ HTML5                 ,  •••• ] 
+  - [ CSS3                  ,    •• ]
+
+  - [ Git                   ,    •• ]
+
+  - [ Mac OS X              ,  •••• ]
+  - [ Linux, Fedora; Ubuntu ,   ••• ]
+  - [ Windows, XP; Vista; 7 ,    •• ]
 
 links:
-    - name: homepage
-      url: http://example.com/
-    - name: Project Page
-      url: https://github.com/reefab/ResumeMan
+  - name: jrunning on GitHub
+    url:  http://github.com/jrunning
+  - name: Stack Overflow
+    url:  http://careers.stackoverflow.com/jordan
+  - name: LinkedIn
+    url:  http://linkedin.com/in/jordanrunning
 
 jobs:
-    - title: Senior Interface Designer
-      company: Famous Company
-      dates: 
-          start: 2007-01-02
-          end: Present
-      desc: |
-          Intrinsicly enable optimal core competencies through corporate relationships. 
+  - title:    Contract Software Engineer
+    company:  Pearson
+    dates: 
+      start:  July 2012
+      end:    Present
+    desc: |
+      I built SAFE, a Rails application that ensures administrators of company
+      systems and facilities are notified and take appropriate action upon the
+      end of employees' and contractors' employment. Its features include:
 
-          Phosfluorescently implement worldwide vortals and client-focused imperatives. 
+      - Retrieving and classifying "termination" records from H.R.'s
+        Oracle database of tens of thousands of workers.
 
-          Conveniently initiate virtual paradigms and top-line convergence.
+      - Routing and scheduling email notifications, reminders and escalations
+        according to user-defined rules.
 
-    - title: Junior Interface Designer
-      company: Technocorp
-      dates: 
-          start: 2005-01-01
-          end: 2007-01-01
-      desc: |
-          Progressively reconceptualize multifunctional "outside the box" thinking through inexpensive methods of empowerment. 
+      - Asynchronously processing uploaded CSV files containing account records
+        and matching them to H.R. records. Records are matched by
+        user-configured fields and, in the absence of an exact match, close
+        matches (selected by a "fuzzy matching" routine implemented with Sphinx)
+        are presented to the user for confirmation.
 
-          Compellingly morph extensive niche markets with mission-critical ideas. 
+      - A front-end using Backbone.js and Bootstrap, with a focus on usability
+        and responsiveness (both challenges when presenting hundreds of records
+        and complex configuration options to the user).
 
-          Phosfluorescently deliver bricks-and-clicks strategic theme areas rather than scalable benefits.
+    tags:     [ Ruby on Rails, Backbone.js, jQuery, Bootstrap, Handlebars.js,
+                CSS3, MySQL, Sphinx, "Delayed::Job" ]
 
-education: # this section is not mandatory
-    - name: Indiana University
-      city: Bloomington
-      region: Indiana
-      country: USA # not mandatory
-      dates:
-        start: 2001-01-01
-        end: 2010-01-01 # not mandatory
-      title: Dual Major, Economics and English
-      grade: 4.0 GPA # not mandatory
+  - title:    Software Engineer
+    company:  Independent Contractor
+    dates: 
+      start:  October 2010
+      end:    July 2012
+    desc: |
+      - Designed and implemented a registration app for merchant services
+        clients of [Tag Creative Studio]. The five-step wizard had more than 70
+        interdependent fields and strict validation on the front- and back-end.
+        tags: [ Ruby on Rails, jQuery, MySQL ]
+
+      - Implemented from a precise specification a Node.js application for
+        initializing, managing and communicating with other applications as
+        directed by remote clients using JSON commands over a socket interface.
+        tags: [ Node.js ]
+
+      - Prototyped a web front-end and Node.js back-end for a Redis-backed
+        English–Spanish translation database for [Componica].
+        tags: [ Node.js, Redis ]
+
+      - Designed and prototyped a social networking and live chat product in
+        Ruby on Rails, backed by MySQL and Redis.
+        tags: [ Ruby on Rails, jQuery, MySQL, Redis ]
+      [Tag Creative Studio]:  http://tagcreativestudio.com/
+      [Componica]:            http://componica.com/
+
+  - title:    Web Application Developer
+    company:  Cramer Development
+    dates:
+      start:  July 2009
+      end:    September 2010
+    desc: |
+      - Developed and maintained large, public-facing web applications like
+        DIYSEO (now [UpCity]) and e-commerce sites like [VetRxDirect] in Ruby
+        on Rails and PHP.
+
+      - Designed and implemented a Ruby client for a complex third-party API
+        which gathered search engine data for DIYSEO.
+
+      - Profiled and optimized complex queries on databases with hundreds of
+        millions of records.
+
+      - Worked directly with clients for whom an hour's downtime equaled
+        thousands of dollars' lost revenue.
+
+      [VetRxDirect]:  http://vetrxdirect.com/
+      [UpCity]:       http://upcity.com/
+
+    tags: [ Ruby on Rails, PHP 5, Prototype, MySQL ]
+
+  - title:    Software Developer
+    company:  Digital Artefacts
+    dates:
+      start:  October 2008
+      end:    July 2009
+    desc: |
+      Designed and implemented an interface for uploading and manipulating
+      images for [CognitiveMedia], initially in Flash with a PHP backend, then
+      again in JavaScript and ASP.NET/C#.
+
+      [CognitiveMedia]: http://cognitiveme.com/
+
+    tags: [ ActionScript 3, PHP 5, JavaScript, C#, ASP.NET ]
+
+education:
+  - name:     Cornell College
+    city:     Mount Vernon
+    region:   IA
+    dates:
+      start:  2000
+      end:    2005
+    title:    B.A. in Computer Science, Art
+
