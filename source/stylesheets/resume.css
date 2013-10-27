@@ -21,14 +21,23 @@
 .msg a:hover { background: #266400; }
 
 /* //-- yui-grids style overrides -- */
-body { font-family: 'sourcepro'; color: #444; }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, clean, sans-serif;
+  color: #444;
+}
 #inner { padding: 10px 80px; margin: 80px auto; background: #f5f5f5; border: solid #666; border-width: 8px 0 2px 0; }
-.yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
 
 /* //-- header, body, footer -- */
-#hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
-#hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 2px;}
-#hd h2 { text-transform: uppercase; letter-spacing: 2px;}
+#hd {
+  font-family: "ff-enzo-web";
+  margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc;
+}
+#hd h1 {
+  font-size: 48px;
+  letter-spacing: 0.05em;
+}
+#hd h2 { text-transform: uppercase; letter-spacing: 2px; }
 #bd, #ft { margin-bottom: 2em; }
 
 /* //-- footer -- */
@@ -40,6 +49,7 @@ h2 { font-size: 152% }
 h3, h4 { font-size: 122%; }
 h1, h2, h3, h4 { color: #333; }
 p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+p:empty { display: none; }
 a { color: #990003 }
 a:hover { text-decoration: none; }
 strong { font-weight: bold; }
@@ -47,7 +57,10 @@ li { line-height: 24px; border-bottom: 1px solid #ccc; }
 p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
 p.enlarge span { color: #000 }
 .contact-info { margin-top: 7px; }
-.first h2 { font-style: italic; }
+h2 {
+  font-style: italic;
+  letter-spacing: 0.08em;
+}
 .last { border-bottom: 0 }
 
 
@@ -61,6 +74,11 @@ a#pdf:hover { background: #222; }
 .job p { margin: 0.75em 0 1em 0; }
 .job li { line-height: default; border-bottom: none; }
 .job ul li {list-style: square outside; }
+.job:last-child {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
 .last { border: none; }
 .skills-list {  }
@@ -70,6 +88,7 @@ a#pdf:hover { background: #222; }
 .talent { width: 32%; float: left }
 .soup { width: 19%; float: left }
 .talent h2 { margin-bottom: 6px; }
+.yui-u:first-child { margin-left: 0 }
 
 .project { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
 
