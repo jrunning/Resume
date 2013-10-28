@@ -1,7 +1,7 @@
 headers:
   profile:    What I Do
   skills:     How I Do It
-  techs:      What I Use
+  techs:      What I've Used
   jobs:       What I've Done
   education:  Where I Studied
   links:      Where To Find Me
@@ -14,13 +14,14 @@ info:
   phone:      (925) 567-3267
   homepage:   http://jordanrunning.com/
   address:
-    # street: 123 Fake Street
-    city:   Iowa City, Iowa
-    # region: IA
-  desc: |
-    I solve problems using technology.
+    city:   Iowa City
+    region: Iowa
 
-      
+  desc: |
+    I solve tough problems, without creating new ones, by applying a broad
+    skillset developed through constant iteration and passion for the craft of
+    web development.
+
 skills:
   - name: Front-End Craftsmanship
     desc: |
@@ -41,22 +42,20 @@ skills:
       strengths as well as opportunities to share my own skills and knowledge.
 
 alphabetsoup:
-  - [ JavaScript            ,  •••• ]
-  - [ Backbone.js           ,   ••• ]
-  - [ jQuery                ,  •••• ]
-  - [ RequireJS             ,    •• ]
+  - [ JavaScript        ,  •••• ]
+  - [ Backbone.js       ,   ••• ]
+  - [ jQuery            ,  •••• ]
+  - [ Git               ,   ••• ]
 
-  - [ Ruby 2.0              ,  •••• ]
-  - [ Ruby on Rails 3.2     ,  •••• ]
+  - [ Ruby              ,  •••• ]
+  - [ Ruby on Rails     ,  •••• ]
+  - [ HTML5             ,  •••• ]
+  - [ CSS3              ,    •• ]
 
-  - [ HTML5                 ,  •••• ] 
-  - [ CSS3                  ,    •• ]
 
-  - [ Git                   ,    •• ]
-
-  - [ Mac OS X              ,  •••• ]
-  - [ Linux, Fedora; Ubuntu ,   ••• ]
-  - [ Windows, XP; Vista; 7 ,    •• ]
+  - [ Mac OS X          ,  •••• ]
+  - [ Linux             ,   ••• ]
+  - [ Windows           ,    •• ]
 
 links:
   - name: jrunning on GitHub
@@ -166,6 +165,6 @@ education:
     region:   IA
     dates:
       start:  2000
-      end:    2005
-    title:    B.A. in Computer Science, Art
+      end:    2004
+    title:    B.A. in Computer Science and Art
 

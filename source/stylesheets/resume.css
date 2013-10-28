@@ -10,11 +10,6 @@
 ---------------------------------------------------------------------------------
 */
 
-@font-face {
-    font-family: 'sourcepro';
-    src: url('../fonts/SourceSansPro-Regular.otf');
-}
-
 .msg { padding: 10px; background: #222; position: relative; }
 .msg h1 { color: #fff;  }
 .msg a { margin-left: 20px; background: #408814; color: white; padding: 4px 8px; text-decoration: none; }
@@ -30,7 +25,6 @@ section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc
 
 /* //-- header, body, footer -- */
 #hd {
-  font-family: "ff-enzo-web";
   margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc;
 }
 #hd h1 {
@@ -38,58 +32,124 @@ section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc
   letter-spacing: 0.05em;
 }
 #hd h2 { text-transform: uppercase; letter-spacing: 2px; }
-#bd, #ft { margin-bottom: 2em; }
 
 /* //-- footer -- */
 #ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
-#ft p { margin-bottom: 0; text-align: center;   }
+#ft ul {
+  display: inline-block;
+  margin-bottom: 0 auto;
+  list-style-type: none;
+}
+#ft ul li {
+  display: block;
+  float: left;
+}
+#ft ul li:not(:last-child)::after {
+  display: inline-block;
+  content: "\2022";
+  width: 1rem;
+  opacity: .5;
+}
 
 /* //-- core typography and style -- */
+h1, h2 { font-family: "ff-enzo-web", Helvetica, Arial, clean, sans-serif; }
 h2 { font-size: 152% }
 h3, h4 { font-size: 122%; }
 h1, h2, h3, h4 { color: #333; }
-p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+.skill, p, .talent li {
+  font-size: 15px
+}
+p {
+  line-height: 1.33;
+  padding-right: 3em;
+}
 p:empty { display: none; }
 a { color: #990003 }
 a:hover { text-decoration: none; }
 strong { font-weight: bold; }
-li { line-height: 24px; border-bottom: 1px solid #ccc; }
+li { line-height: 24px; }
 p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
 p.enlarge span { color: #000 }
-.contact-info { margin-top: 7px; }
 h2 {
   font-style: italic;
   letter-spacing: 0.08em;
 }
-.last { border-bottom: 0 }
-
+.last {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
 
 /* //-- section styles -- */
+.contact-info { margin-top: 7px; }
+.contact-info h3 { line-height: 1.33; }
 
-a#pdf { display: block; float: left; background: #666; color: white; padding: 6px 50px 6px 12px; margin-bottom: 6px; text-decoration: none;  }
+a#pdf {
+  display: block;
+  float: left;
+  background: #666;
+  color: white;
+  padding: 6px 50px 6px 12px;
+  margin-bottom: 6px;
+  text-decoration: none;
+}
+
 a#pdf:hover { background: #222; }
 
+.talent > * {
+  padding-right: 1rem;
+}
 .job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
 .job h4 { position: absolute; top: 0.35em; right: 0 }
-.job p { margin: 0.75em 0 1em 0; }
-.job li { line-height: default; border-bottom: none; }
-.job ul li {list-style: square outside; }
+.job p { margin: 0.75em 0 1em 0; text-align: justify; }
+.job li {
+  list-style: square inside;
+  line-height: default;
+  border-bottom: none; 
+  margin-left: .5em;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.job li p { margin-left: 0; }
 .job:last-child {
   border: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.last { border: none; }
-.skills-list {  }
-.skills-list ul { margin: 0; }
-.skills-list li { margin: 3px 0; padding: 3px 0; }
-.skills-list li span { font-size: 152%; display: block; margin-bottom: -2px; padding: 0 }
 .talent { width: 32%; float: left }
-.soup { width: 19%; float: left }
 .talent h2 { margin-bottom: 6px; }
-.yui-u:first-child { margin-left: 0 }
+.talent p { text-align: justify; }
+.soup ul { width: 32%; float: left; }
+.soup li {
+  padding-left: .33rem;
+  padding-right: 2.5rem;
+  margin-right: .5rem;
+}
+.soup li::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.soup li > [rel=tag] {
+  float: left;
+}
+.soup li > span[class^="skill-"] {
+  font-size: 112%;
+  margin-right: -2.167rem;
+  float: right;
+}
+.soup li:nth-child(2n+1) {
+  background-color: #e3e3e3;
+}
 
+.links {
+  list-style-type: none;
+  font-size: 16px;
+}
+.links li {
+  float: left;
+  width: 32%;
+}
 #srt-ttab { margin-bottom: 100px; text-align: center;  }
 #srt-ttab img.last { margin-top: 20px }
 

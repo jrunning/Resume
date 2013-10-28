@@ -1,5 +1,5 @@
-a#pdf {
-    display: none;
+a#pdf, .typekit-badge {
+    display: none !important;
 }
 
 #hd h1 {

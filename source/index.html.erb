@@ -3,53 +3,52 @@
   <!-- template originally from http://sampleresumetemplate.net -->
   <head>
     <meta charset="utf-8">
-    
+
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
+
     <title><%= data.resume.info.name || "Resume" %></title>
-    
+
     <%= stylesheet_link_tag "reset-fonts-grids", "resume" , :media => "all"%>
     <%= stylesheet_link_tag "print" , :media => "print"%>
+
+    <script src="javascript/hyphenator.js" type="text/javascript"></script>
+    <script src="javascript/widowtamer-min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//use.typekit.net/awb7nrj.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
-  
+
   <body class="<%= page_classes %> hresume">
     <div id="doc2" class="yui-t7">
       <div id="inner">
 
-        <div id="hd">
-          <address class="vcard">
-            <section class="yui-gc">
-              <div class="yui-u first">
-                <h1 class="fn"><%= data.resume.info.name %></h1>
-                <h2><%= data.resume.info.shortdesc %></h2>
-              </div>
+        <section id="hd" class="yui-gc vcard">
 
-              <div class="yui-u">
-                <div class="contact-info">
-                  <h3><a id="pdf" href="resume.pdf"><%= data.resume.headers.download %></a></h3>
-                  <h3><a class="email" href="mailto:<%= data.resume.info.email %>"><%= data.resume.info.email %></a></h3>
-                  <% if data.resume.info.homepage? %>
-                    <h3 class="url"><%= data.resume.info.homepage %></h3>
-                <% end %>
-                  <% if data.resume.info.phone %>
-                    <h3 class="tel"><%= data.resume.info.phone %></h3>
-                <% end %>
-                  <span class="adr">
-                    <h3>
-                      <span class="street-address"><%= data.resume.info.address.street %></span>
-                      <span class="locality"><%= data.resume.info.address.city %></span>
-                    </h3>
-                    <h3>
-                      <span class="region"><%= data.resume.info.address.region %></span>
-                      <span class="postal-code"><%= data.resume.info.address.postal_code %></span>
-                      <span class="country"><%= data.resume.info.address.country %></span>
-                    </h3>
-                  </div><!--// .contact-info -->
-                </div>
-              </section><!--// .yui-gc -->
-            </address>
-          </div><!--// hd -->
+          <div class="yui-u first">
+            <h1 class="fn"><%= data.resume.info.name %></h1>
+            <h2><%= data.resume.info.shortdesc %></h2>
+          </div>
+
+          <div class="yui-u">
+            <div class="contact-info">
+              <h3><a id="pdf" href="resume.pdf"><%= data.resume.headers.download %></a></h3>
+              <h3><a class="email" href="mailto:<%= data.resume.info.email %>"><%= data.resume.info.email %></a></h3>
+              <% if data.resume.info.homepage? %>
+                <h3 class="url"><%= data.resume.info.homepage %></h3>
+            <% end %>
+              <% if data.resume.info.phone %>
+                <h3 class="tel"><%= data.resume.info.phone %></h3>
+            <% end %>
+              <span class="adr">
+                <h3>
+                  <span class="street-address"><%= data.resume.info.address.street %></span>
+                  <span class="locality"><%= data.resume.info.address.city %></span>,
+                  <span class="region"><%= data.resume.info.address.region %></span>
+                </h3>
+              </div><!--// .contact-info -->
+            </div>
+            <!--// .yui-gc -->
+          </section><!--// hd -->
 
           <div id="bd">
             <div class="yui-b">
@@ -58,19 +57,19 @@
                   <h2><%= data.resume.headers.profile %></h2>
                 </div>
                 <div class="yui-u">
-                  <p class="summary"><%= Maruku.new(data.resume.info.desc).to_html %></p>
+                  <p class="summary hyphenate"><%= Maruku.new(data.resume.info.desc).to_html %></p>
                 </div>
               </section><!--// .yui-gf -->
 
               <section class="yui-gf">
                 <div class="yui-u first">
-                  <h2><%= data.resume.headers.skills %></h2>
+                  <h2>How I Do&nbsp;It</h2>
                 </div>
                 <div class="yui-u">
                   <% data.resume.skills.each do |skill| %>
                     <div class="talent">
                     <h2><%= skill.name %></h2>
-                    <p><%= skill.desc %></p>
+                    <p class="hyphenate"><%= skill.desc %></p>
                   </div>
                 <% end %>
                 </div>
@@ -80,18 +79,23 @@
                 <div class="yui-u first">
                   <h2><%= data.resume.headers.techs %></h2>
                 </div>
-                <div class="yui-u">
-                  <% data.resume.alphabetsoup.each.with_index do |skill, index| %>
-                    <% if (index + 1) % 3 == 1 %>
-                    <ul class="soup">
+                <div class="yui-u soup">
+                  <%  cols = 3 
+                      num_per_col, mod = data.resume.alphabetsoup.size.divmod(cols)
+                      num_per_col += 1 unless mod == 0
+                  %>
+                  <% data.resume.alphabetsoup.each.with_index do |(skill_name, skill_rank), index| %>
+                    <% if (index + 1) % num_per_col == 1 %>
+                      <ul>
+                    <% end %>
+                        <li class="skill">
+                          <span rel="tag"><%= skill_name %></span>
+                          <span class="skill-<%= skill_rank.size %>stars"><%= skill_rank %></span>
+                        </li>
+                    <% if (index + 1) % num_per_col == 0 %>
+                      </ul>
+                    <% end %>
                   <% end %>
-
-                    <li class="skill" rel="tag"><%= skill %></li>
-
-                    <% if (index + 1) % 3 == 0 %>
-                    </ul>
-                <% end %>
-                <% end %>
                 </div>
               </section><!--// .yui-gf-->
 
@@ -106,10 +110,12 @@
                     <h2 class="location"><%= job.company %></h2>
                     <h3 class="summary"><%= job.title %></h3>
                     <h4>
-                      <abbr class="dtstart" title="<%= job.dates.start %>"><%= display_date(job.dates.start) %></abbr> -
+                      <abbr class="dtstart" title="<%= job.dates.start %>"><%= display_date(job.dates.start) %></abbr> –
                       <abbr class="dtend" title="<%= job.dates.end %>"><%= display_date(job.dates.end) %></abbr>
                     </h4>
-                    <p><%= Maruku.new(job.desc).to_html %></p>
+                    <div class="hyphenate">
+                      <%= Maruku.new(job.desc).to_html %>
+                    </div>
                   </div>
                 <% end %>
                 </div><!--// .yui-u -->
@@ -117,51 +123,24 @@
 
               <% if data.resume.education? %>
                 <section class="yui-gf">
-                <div class="yui-u first">
-                  <h2><%= data.resume.headers.education %></h2>
-                </div>
-                <div class="yui-u" class="vcalendar">
-                  <div class="no-page-breaker">
-                    <% data.resume.education.each do |edu| %>
-                      <span class="education vevent summary vcard">
-                      <h2 class="fn org"><%= edu.name %>,
-                        <span class="adr">
-                          <span class="locality"><%= edu.city %></span> - <span class="region"><%= edu.region %></span>
-                          <% if edu.country? %>
-                            <span class="country"> <%= edu.country %></span>
-                        <% end %>
-                        </span>
-                      </h2>
-                      <h4>
-                        <abbr class="dtstart" title="<%= edu.dates.start %>"><%= display_date(edu.dates.start) %></abbr>
-                        <% if edu.dates.end? %>
-                          - <abbr class="dtend" title="<%= edu.dates.end %>"><%= display_date(edu.dates.end) %></abbr>
-                      <% end %>
-                      </h4>
-                      <h3><%= edu.title %> &nbsp; <strong><%= edu.grade if edu.grade? %></strong> </h3>
-                    </span>
-                  <% end %>
+                  <div class="yui-u first">
+                    <h2><%= data.resume.headers.education %></h2>
                   </div>
-                </div>
-              </section><!--// .yui-gf -->
-            <% end %>
-
-            <% if data.resume.languages? %>
-              <section class="yui-gf">
-                <div class="yui-u first">
-                  <h2><%= data.resume.headers.languages %></h2>
-                </div><!--// .yui-u -->
-
-                <div class="yui-u">
-                  <% data.resume.languages.each do |lang| %>
-                    <div class="talent">
-                      <h2><%= lang.name %></h2>
-                      <p><%= lang.level %></p>
+                  <div class="yui-u" class="vcalendar">
+                    <div class="no-page-breaker">
+                      <% data.resume.education.each do |edu| %>
+                        <p class="education vevent summary vcard">
+                          From <abbr class="dtstart" title="<%= edu.dates.start %>"><%= display_date(edu.dates.start) %></abbr>
+                          to <abbr class="dtend" title="<%= edu.dates.end %>"><%= display_date(edu.dates.end) %></abbr>
+                          I attended <span class="fn org"><%= edu.name %></span>
+                          in <span class="adr"><span class="locality"><%= edu.city %></span>, <span class="region"><%= edu.region %></span></span>
+                          and earned a <%= edu.title %>.
+                        </p>
+                      <% end %>
                     </div>
-                  <% end %>
-                </div><!--// .yui-u -->
-              </section><!--// .yui-gf -->
-            <% end %>
+                  </div>
+                </section><!--// .yui-gf -->
+              <% end %>
 
             <section class="yui-gf last">
               <div class="yui-u first">
@@ -169,7 +148,7 @@
               </div><!--// .yui-u -->
 
               <div class="yui-u">
-                <ul class="talent no-page-breaker">
+                <ul class="links no-page-breaker">
                   <% data.resume.links.each do |link| %>
                     <li><%= link_to link.name, link.url %></li>
                   <% end %>
@@ -182,11 +161,15 @@
           </div><!--// bd -->
 
           <div id="ft">
-            <p><%= data.resume.info.name %> &mdash; <a href="mailto:<%= data.resume.info.email %>"><%= data.resume.info.email %></a> &mdash; <%= data.resume.info.phone  if data.resume.info.phone? %></p>
+            <ul>
+              <li><%= data.resume.info.name %></li>
+              <li><a href="mailto:<%= data.resume.info.email %>"><%= data.resume.info.email %></a></li>
+              <li><%= data.resume.info.phone if data.resume.info.phone? %></li>
+            </ul>
           </div><!--// footer -->
-
         </div><!-- // inner -->
-
       </div><!--// doc -->
+
+      <script type="text/javascript">wt.fix({ elements: "p,span[rel=tag]", method: "nbsp"  })</script>
     </body>
   </html>
