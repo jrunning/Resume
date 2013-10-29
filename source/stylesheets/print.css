@@ -1,3 +1,4 @@
+#inner { background: none; margin: auto; }
 a { text-decoration: none; }
 a#pdf, .typekit-badge { display: none !important; }
 #hd h1 { letter-spacing: 0.03em; }
