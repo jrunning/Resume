@@ -92,34 +92,38 @@ jobs:
         and responsiveness (both challenges when presenting hundreds of records
         and complex configuration options to the user).
 
-    tags:     [ Ruby on Rails, Backbone.js, jQuery, Bootstrap, Handlebars.js,
-                CSS3, MySQL, Sphinx, "Delayed::Job" ]
+    tags: [ Ruby on Rails, Backbone.js, jQuery, Bootstrap, Handlebars.js,
+            CSS3, MySQL, Sphinx, "Delayed::Job" ]
 
   - title:    Software Engineer
     company:  Independent Contractor
     dates: 
       start:  October 2010
       end:    July 2012
-    desc: |
-      - Designed and implemented a registration app for merchant services
-        clients of [Tag Creative Studio]. The five-step wizard had more than 70
-        interdependent fields and strict validation on the front- and back-end.
-        tags: [ Ruby on Rails, jQuery, MySQL ]
+    tasks:
+      - desc: |
+          Designed and implemented a registration app for merchant services
+          clients of [Tag Creative Studio](http://tagcreativestudio.com/). The
+          five-step wizard had more than 70 interdependent fields and strict
+          validation on the front- and back-end.
+        tags: [ Ruby on Rails, jQuery, CSS3, MySQL ]
 
-      - Implemented from a precise specification a Node.js application for
-        initializing, managing and communicating with other applications as
-        directed by remote clients using JSON commands over a socket interface.
+      - desc: |
+          Implemented from a precise specification a Node.js application for
+          initializing, managing and communicating with other applications as
+          directed by remote clients using JSON commands over a socket
+          interface.
         tags: [ Node.js ]
 
-      - Prototyped a web front-end and Node.js back-end for a Redis-backed
-        English–Spanish translation database for [Componica].
+      - desc: |
+          Prototyped a web front-end and Node.js back-end for a Redis-backed
+          English–Spanish translation database for [Componica](http://componica.com/).
         tags: [ Node.js, Redis ]
 
-      - Designed and prototyped a social networking and live chat product in
-        Ruby on Rails, backed by MySQL and Redis.
+      - desc: |
+          Designed and prototyped a social networking and live chat product in
+          Ruby on Rails, backed by MySQL and Redis.
         tags: [ Ruby on Rails, jQuery, MySQL, Redis ]
-      [Tag Creative Studio]:  http://tagcreativestudio.com/
-      [Componica]:            http://componica.com/
 
   - title:    Web Application Developer
     company:  Cramer Development
