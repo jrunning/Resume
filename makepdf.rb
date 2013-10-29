@@ -25,7 +25,7 @@ module PdfMaker
 
                     rescue Exception =>e
                         builder.say_status "PDF Maker",  "Error: #{e.message}", Thor::Shell::Color::RED
-                        Raise 
+                        raise 
                     end
                     builder.say_status "PDF Maker",  "PDF file available at build/resume.pdf"
                 end

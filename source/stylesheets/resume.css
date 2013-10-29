@@ -110,6 +110,7 @@ a#pdf:hover { background: #222; }
 .job .tags {
   font-size: 14px;
   display: inline-block;
+  page-break-before: avoid;
 }
 .job p .tags { padding-left: 1em; }
 
@@ -122,6 +123,7 @@ a#pdf:hover { background: #222; }
   text-indent: 0;
   margin: .2em;
   box-sizing: border-box;
+  page-break-before: avoid;
 }
 
 .job .tags [rel=tag].active {
