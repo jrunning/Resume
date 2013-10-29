@@ -1,19 +1,4 @@
-a#pdf, .typekit-badge {
-    display: none !important;
-}
-
-#hd h1 {
-    letter-spacing: 0.03em;
-}
-
-#hd h2 {
-    letter-spacing: 0.03em;
-}
-
-a:not(.donotexpand):link:after, a:not(.donotexpand):visited:after {
-  content: " - " attr(href) " ";
-}
-
-div.no-page-breaker {
-    page-break-inside: avoid;
-}
+a { text-decoration: none; }
+a#pdf, .typekit-badge { display: none !important; }
+#hd h1 { letter-spacing: 0.03em; }
+#hd h2 { letter-spacing: 0.03em; }

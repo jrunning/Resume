@@ -10,17 +10,12 @@
 ---------------------------------------------------------------------------------
 */
 
-.msg { padding: 10px; background: #222; position: relative; }
-.msg h1 { color: #fff;  }
-.msg a { margin-left: 20px; background: #408814; color: white; padding: 4px 8px; text-decoration: none; }
-.msg a:hover { background: #266400; }
-
 /* //-- yui-grids style overrides -- */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, clean, sans-serif;
   color: #444;
 }
-#inner { padding: 10px 80px; margin: 80px auto; background: #f5f5f5; border: solid #666; border-width: 8px 0 2px 0; }
+#inner { padding: 10px 80px; margin: 80px auto; background: #e8fffa; border: solid #037575; border-width: 8px 0 2px 0; }
 section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
 
 /* //-- header, body, footer -- */
@@ -28,10 +23,14 @@ section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc
   margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc;
 }
 #hd h1 {
-  font-size: 48px;
+  font-size: 64px;
   letter-spacing: 0.05em;
 }
-#hd h2 { text-transform: uppercase; letter-spacing: 2px; }
+#hd h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
 /* //-- footer -- */
 #ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
@@ -64,7 +63,7 @@ p {
   padding-right: 3em;
 }
 p:empty { display: none; }
-a { color: #990003 }
+a { color: #4f4538; }
 a:hover { text-decoration: none; }
 strong { font-weight: bold; }
 li { line-height: 24px; }
@@ -86,7 +85,7 @@ h2 {
 a#pdf {
   display: block;
   float: left;
-  background: #666;
+  background: #024B5A;
   color: white;
   padding: 6px 50px 6px 12px;
   margin-bottom: 6px;
@@ -116,9 +115,35 @@ a#pdf:hover { background: #222; }
   padding-bottom: 0;
 }
 
+.job .desc > ul > li:last-child p { margin-bottom: .5em }
+
+.job .tags {
+  font-size: 14px;
+  display: inline-block;
+}
+.job p .tags { padding-left: 1em; }
+
+.job .tags [rel=tag] {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: rgba(2,75,90,0.2);
+  padding: 2px 4px;
+  text-indent: 0;
+  margin: .25em .1em;
+  box-sizing: border-box;
+}
+
+.job .tags [rel=tag].active {
+  background-color: rgba(98,142,15,1);
+  color: #fafafa;
+  text-shadow: -1px -1px rgba(0,0,0,0.5);
+}
+
 .talent { width: 32%; float: left }
 .talent h2 { margin-bottom: 6px; }
 .talent p { text-align: justify; }
+
 .soup ul { width: 32%; float: left; }
 .soup li {
   padding-left: .33rem;
@@ -139,7 +164,7 @@ a#pdf:hover { background: #222; }
   float: right;
 }
 .soup li:nth-child(2n+1) {
-  background-color: #e3e3e3;
+  background-color: rgba(0,0,0,0.05);
 }
 
 .links {
