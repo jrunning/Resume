@@ -64,7 +64,7 @@
             <div class="yui-b">
               <section class="yui-gf">
                 <div class="yui-u first">
-                  <h2><%= data.resume.headers.profile %></h2>
+                  <h2><%= widont data.resume.headers.profile %></h2>
                 </div>
                 <div class="yui-u">
                   <p class="summary hyphenate"><%= Maruku.new(data.resume.info.desc).to_html %></p>
@@ -73,7 +73,7 @@
 
               <section class="yui-gf">
                 <div class="yui-u first">
-                  <h2>How I Do&nbsp;It</h2>
+                  <h2><%= widont data.resume.headers.skills %></h2>
                 </div>
                 <div class="yui-u">
                   <% data.resume.skills.each do |skill| %>
@@ -87,11 +87,11 @@
 
               <section class="yui-gf no-page-breaker">
                 <div class="yui-u first">
-                  <h2><%= data.resume.headers.techs %></h2>
+                  <h2><%= widont data.resume.headers.techs %></h2>
                 </div>
                 <div class="yui-u soup">
-                  <%  cols = 3 
-                      num_per_col, mod = data.resume.alphabetsoup.size.divmod(cols)
+                  <%  cols = 3; num_items = data.resume.alphabetsoup.size
+                      num_per_col, mod = num_items.divmod(cols)
                       num_per_col += 1 unless mod == 0
                   %>
                   <% data.resume.alphabetsoup.each.with_index do |(skill_name, skill_rank), index| %>
@@ -100,9 +100,9 @@
                     <% end %>
                         <li class="skill">
                           <span rel="tag"><%= skill_name %></span>
-                          <span class="skill-<%= skill_rank.size %>stars"><%= skill_rank %></span>
+                          <span class="skill-rank"><%= skill_rank %></span>
                         </li>
-                    <% if (index + 1) % num_per_col == 0 %>
+                    <% if (index + 1) == num_items || (index + 1) % num_per_col == 0 %>
                       </ul>
                     <% end %>
                   <% end %>
@@ -111,36 +111,30 @@
 
               <section class="yui-gf no-page-breaker">
                 <div class="yui-u first">
-                  <h2><%= data.resume.headers.jobs %></h2>
+                  <h2><%= widont data.resume.headers.jobs %></h2>
                 </div><!--// .yui-u -->
 
                 <div class="yui-u vcalendar">
                   <% data.resume.jobs.each do |job| %>
                     <div class="job no-page-breaker experience vevent">
-                    <h2 class="location"><%= job.company %></h2>
-                    <h3 class="summary"><%= job.title %></h3>
-                    <h4>
-                      <abbr class="dtstart" title="<%= job.dates.start %>"><%= display_date(job.dates.start) %></abbr> –
-                      <abbr class="dtend" title="<%= job.dates.end %>"><%= display_date(job.dates.end) %></abbr>
-                    </h4>
+                      <h2 class="location"><%= job.company %></h2>
+                      <h3 class="summary"><%= job.title %></h3>
+                      <h4>
+                        <abbr class="dtstart" title="<%= job.dates.start %>"><%= display_date(job.dates.start) %></abbr> –
+                        <abbr class="dtend" title="<%= job.dates.end %>"><%= display_date(job.dates.end) %></abbr>
+                      </h4>
                       <% if job.tasks %>
                         <ul class="desc">
                           <% job.tasks.each do |task| %>
-                            <li>
-                              <%  paras = Maruku.new(task.desc.strip).children
-                                  paras.each_with_index do |para,idx|
-                              %>
-                                <p class="hyphenate"><%= para.to_html %>
-                                  <% if idx + 1 == paras.size %>
-                                    <span class="tags donthyphenate">
-                                      <% task.tags.each do |tag| %>
-                                        <span rel="tag" data-tag="<%= tag.downcase.gsub(/[^a-z]+/, "-") %>"><%= tag %></span>
-                                      <% end %>
-                                    </span>
-                                  <% end %>
-                                </p>
-                              <% end %>
-                            </li>
+                            <li><%  paras = Maruku.new(task.desc.strip).children
+                                    paras.each_with_index do |para,idx|
+                            %>
+                              <p class="hyphenate"><%= para.to_html %><% if idx + 1 == paras.size %>
+                                <span class="tags donthyphenate">
+                                  <% task.tags.each do |tag| %><%= tag_el(tag) %><% end %>
+                                </span>
+                              <% end %></p>
+                            <% end %></li>
                           <% end %>
                         </ul>
                       <% else %>
@@ -148,9 +142,7 @@
                           <%= Maruku.new(job.desc).to_html %>
 
                           <span class="tags donthyphenate">
-                            <% job.tags.each do |tag| %>
-                              <span rel="tag" data-tag="<%= tag.downcase.gsub(/[^a-z]+/, "-") %>"><%= tag %></span>
-                            <% end %>
+                            <% job.tags.each do |tag| %><%= tag_el(tag) %><% end %>
                           </span>
                         </div>
                       <% end %>
@@ -162,7 +154,7 @@
               <% if data.resume.education? %>
                 <section class="yui-gf">
                   <div class="yui-u first">
-                    <h2><%= data.resume.headers.education %></h2>
+                    <h2><%= widont data.resume.headers.education %></h2>
                   </div>
                   <div class="yui-u" class="vcalendar">
                     <div class="no-page-breaker">
@@ -182,7 +174,7 @@
 
             <section class="yui-gf last">
               <div class="yui-u first">
-                <h2><%= data.resume.headers.links %></h2>
+                <h2><%= widont data.resume.headers.links %></h2>
               </div><!--// .yui-u -->
 
               <div class="yui-u">

@@ -54,15 +54,27 @@ page "index.html", :layout => false
 # end
 
 helpers do
-    def display_date(date)
-        # Change this if you prefer another date format: 
-        # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-strftime
-        if date.is_a?(Date)
-            date.strftime("%e %B %Y")
-        else
-            date
-        end
+  def display_date(date)
+    # Change this if you prefer another date format:
+    # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#method-i-strftime
+    if date.is_a?(Date)
+      date.strftime("%e %B %Y")
+    else
+      date
     end
+  end
+
+  def stub_tag(str)
+    str.downcase.gsub(/[^a-z0-9]+/, " ").strip.gsub(/\s+/, "-")
+  end
+
+  def tag_el(str)
+    %Q{<span rel="tag" data-tag="#{stub_tag str}">#{str}</span>}
+  end
+
+  def widont(str)
+    str.strip.sub(/\s(\S+\s*$)/, '&nbsp;\1')
+  end
 end
 
 set :css_dir, 'stylesheets'

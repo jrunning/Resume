@@ -92,8 +92,8 @@ jobs:
         and responsiveness (both challenges when presenting hundreds of records
         and complex configuration options to the user).
 
-    tags: [ Ruby on Rails, Backbone.js, jQuery, Bootstrap, Handlebars.js,
-            CSS3, MySQL, Sphinx, "Delayed::Job" ]
+    tags: [ Backbone.js, Bootstrap, CSS3, "Delayed::Job", Handlebars.js,
+            jQuery, MySQL, Ruby on Rails, Sphinx ]
 
   - title:    Software Engineer
     company:  Independent Contractor
