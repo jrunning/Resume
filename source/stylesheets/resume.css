@@ -1,14 +1,4 @@
-/*
----------------------------------------------------------------------------------
-	STRIPPED DOWN RESUME TEMPLATE
-    html resume
-
-    v0.9: 5/28/09
-
-    design and code by: thingsthatarebrown.com 
-                        (matt brown)
----------------------------------------------------------------------------------
-*/
+/* Based on Stripped Down Resume Template by Matt Brown (thingsthatarebrown.com). */
 
 /* //-- yui-grids style overrides -- */
 body {
@@ -52,7 +42,7 @@ section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc
 
 /* //-- core typography and style -- */
 h1, h2 { font-family: "ff-enzo-web", Helvetica, Arial, clean, sans-serif; }
-h2 { font-size: 152% }
+h2 { font-size: 167%; }
 h3, h4 { font-size: 122%; }
 h1, h2, h3, h4 { color: #333; }
 .skill, p, .talent li {
@@ -103,7 +93,7 @@ a#pdf:hover { background: #222; }
 .job li {
   list-style: square inside;
   line-height: default;
-  border-bottom: none; 
+  border-bottom: none;
   margin-left: .5em;
   padding-left: 1em;
   text-indent: -1em;
@@ -130,7 +120,7 @@ a#pdf:hover { background: #222; }
   background-color: rgba(2,75,90,0.2);
   padding: 2px 4px;
   text-indent: 0;
-  margin: .25em .1em;
+  margin: .2em;
   box-sizing: border-box;
 }
 
@@ -158,7 +148,7 @@ a#pdf:hover { background: #222; }
 .soup li > [rel=tag] {
   float: left;
 }
-.soup li > span[class^="skill-"] {
+.soup li > .skill-rank {
   font-size: 112%;
   margin-right: -2.167rem;
   float: right;
@@ -180,5 +170,8 @@ a#pdf:hover { background: #222; }
 
 /* --// override to force 1/8th width grids -- */
 .yui-gf .yui-u{width:80.2%;}
-.yui-gf div.first{width:12.3%;}
+.yui-gf div.first{width:19.8%;}
 
+div.no-page-breaker {
+    page-break-inside: avoid;
+}
