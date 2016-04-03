@@ -9,7 +9,7 @@ headers:
 
 info:
   name:       Jordan Running
-  shortdesc:  I Make Web Apps.
+  shortdesc:  I Make Apps.
   email:      jr@jordanrunning.com
   phone:      (925) 567-3267
   homepage:   http://jordanrunning.com/
@@ -18,63 +18,107 @@ info:
     region: Iowa
 
   desc: |
-    I solve tough problems, without creating new ones, by applying a broad
-    skillset developed through constant iteration and passion for the craft of
-    web development.
+    I solve tough problems by applying a broad skillset developed through more
+    than a decade of passion for the craft of software engineering and web
+    development.
 
 skills:
-  - name: Front-End Craftsmanship
+  - name: Back-End Craftsmanship
     desc: |
-      A flawless back-end isn't worth building if the user experience is
-      frustrating and inconsistent. Modern tools and methodology enable me put
-      the user first as a rule, not an exception.
+      A diverse background gives me the ability to choose the right tool for
+      any job, be it Ruby on Rails for a classic CRUD app, Express for a
+      lightweight API, or something entirely different. Broad expertise lets me
+      iterate--and pick up any skill--rapidly and consistently.
 
-  - name: Back-End Fundamentals
+  - name: Front-End Expertise
     desc: |
-      Expertise in Ruby and Ruby on Rails lets me do great work, but also tells
-      me when they're not the best tools for the job. My diverse background
-      gives me the ability to pick up the tools I don't yet know, quickly.
+      An application isn't worth building if the user experience is frustrating
+      and inconsistent. An eye for UX and mastery of modern tools and
+      best practices enable me put the user first as a rule, not an exception.
 
   - name: Communication & Collaboration
     desc: |
-      Writing and speaking clearly about complex and subtle ideas is essential
-      to being an effective team member, as is recognizing my teammates'
-      strengths and opportunities to share my own skills and knowledge.
+      Writing and speaking clearly about complex and subtle ideas is key to my
+      effectiveness as a team player, as is recognizing my teammates' strengths
+      and seeking out opportunities to share my own skills and knowledge.
 
 alphabetsoup:
-  - [ JavaScript        ,  •••• ]
-  - [ Backbone.js       ,   ••• ]
-  - [ jQuery            ,  •••• ]
-  - [ Git               ,   ••• ]
-
-  - [ Ruby              ,  •••• ]
-  - [ Ruby on Rails     ,  •••• ]
-  - [ HTML5             ,  •••• ]
-  - [ CSS3              ,    •• ]
-
-
-  - [ Mac OS X          ,  •••• ]
-  - [ Linux             ,   ••• ]
-  - [ Windows           ,    •• ]
+  - [ JavaScript        , •••• ]
+  - [ Node.js           , •••  ]
+  - [ React             , •••  ]
+  - [ AngularJS         , ••   ]
+  - [ Backbone.js       , •••  ]
+  - [ jQuery            , •••• ]
+  - [ Git               , •••  ]
+  - [ Ruby              , •••• ]
+  - [ Ruby on Rails     , •••• ]
+  - [ HTML5 & CSS       , •••• ]
+  - [ Mac OS X          , •••• ]
+  - [ Linux             , •••  ]
+  - [ Windows           , ••   ]
 
 links:
-  - name: jrunning on GitHub
-    url:  http://github.com/jrunning
+  - name: GitHub
+    url:  https://github.com/jrunning
   - name: Stack Overflow
     url:  http://careers.stackoverflow.com/jordan
   - name: LinkedIn
     url:  http://linkedin.com/in/jordanrunning
 
 jobs:
+  - title:    Software Development Engineer II
+    company:  Chef Software, Inc.
+    dates:
+      start:  January 2014
+      end:    April 2016
+
+    desc: |
+      Infrastructure automation leader Chef is an engineering-driven company
+      that embraces agile methodology, kanban, and pair programming. There I
+      contributed to some of Chef's most crucial user-facing software:
+
+    tasks:
+      - desc: |
+          I joined the Chef Analytics team at a critical time to help turn a
+          prototype into a shipped product on a tight deadline. Working closely
+          with product managers, designers and UX engineers I subsequently
+          built new components in React using ES2015 (ES6), helped execute a
+          UX-driven redesign, and maintained "legacy" AngularJS components.
+
+          I championed best practices in testing and empowered the team as
+          principal maintainer of a Grunt- and Webpack-based build workflow
+          that included a Node.js and RAML-based data-mocking environment and
+          Mocha test suite. I also provided technical guidance and assistance
+          to teammates, on both the front-end and the Ruby on Rails back-end,
+          including pair-programming with new and junior teammates.
+
+        tags: [ React, AngularJS, Ruby on Rails, ES2015, Mocha, Webpack,
+                Bootstrap ]
+
+      - desc: |
+          On the Workflow Pool team I delivered customer-driven enhancements
+          and fixes for Chef's core products and workflow tools. I wrote
+          comprehensive RSpec tests to not only cover new code but also to
+          improve coverage and maintainability of existing code.
+
+        tags: [ Ruby, RSpec, Chef ]
+
+      - desc: |
+          I implemented UX enhancements and bug fixes for the web-based
+          infrastructure management console Chef Manage using Ruby on Rails
+          and Backbone.js, with comprehensive tests in RSpec and Mocha.
+
+        tags: [ Ruby on Rails, Backbone.js, Mocha, CoffeeScript, Bootstrap, PostgreSQL ]
+
   - title:    Contract Software Engineer
     company:  Pearson
-    dates: 
+    dates:
       start:  July 2012
-      end:    Present
+      end:    December 2013
     desc: |
-      I built SAFE, a Rails application that ensures administrators of company
-      systems and facilities are notified and take appropriate action upon the
-      end of employees' and contractors' employment. Its features include:
+      I built a Rails application that notifies administrators of company
+      systems and facilities when a worker's employment ends and ensures that
+      they take appropriate action. Its features include:
 
       - Retrieving and classifying "termination" records from H.R.'s
         Oracle database of tens of thousands of workers.
@@ -82,22 +126,19 @@ jobs:
       - Routing and scheduling email notifications, reminders and escalations
         according to user-defined rules.
 
-      - Asynchronously processing uploaded CSV files containing account records
-        and matching them to H.R. records. Records are matched by
-        user-configured fields and, in the absence of an exact match, close
-        matches (selected by a "fuzzy matching" routine implemented with Sphinx)
-        are presented to the user for confirmation.
+      - Processing uploaded CSV data and matching it to H.R. records by
+        user-configured fields or, in the absence of an exact match, via
+        "fuzzy" matching implemented in Sphinx.
 
-      - A front-end using Backbone.js and Bootstrap, with a focus on usability
-        and responsiveness (both challenges when presenting hundreds of records
-        and complex configuration options to the user).
+      - A fast and usable Backbone.js front-end for managing hundreds or
+        thousands of records and complex configuration options.
 
-    tags: [ Backbone.js, Bootstrap, CSS3, "Delayed::Job", Handlebars.js,
+    tags: [ CoffeeScript, Backbone.js, Bootstrap, "Delayed::Job", Handlebars.js,
             jQuery, MySQL, Ruby on Rails, Sphinx ]
 
   - title:    Software Engineer
     company:  Independent Contractor
-    dates: 
+    dates:
       start:  October 2010
       end:    July 2012
     tasks:
@@ -106,23 +147,18 @@ jobs:
           clients of [Tag Creative Studio](http://tagcreativestudio.com/). The
           five-step wizard had more than 70 interdependent fields and strict
           validation on the front- and back-end.
-        tags: [ Ruby on Rails, jQuery, CSS3, MySQL ]
+        tags: [ Ruby on Rails, jQuery, MySQL ]
 
       - desc: |
-          Implemented from a precise specification a Node.js application for
-          initializing, managing and communicating with other applications as
-          directed by remote clients using JSON commands over a socket
+          Implemented, from a precise specification, a Node.js application
+          for initializing, managing and communicating with other applications
+          as directed by remote clients using JSON commands over a socket
           interface.
         tags: [ Node.js ]
 
       - desc: |
-          Prototyped a web front-end and Node.js back-end for a Redis-backed
-          English–Spanish translation database for [Componica](http://componica.com/).
-        tags: [ Node.js, Redis ]
-
-      - desc: |
-          Designed and prototyped a social networking and live chat product in
-          Ruby on Rails, backed by MySQL and Redis.
+          Designed and prototyped a social networking and live chat product
+          in Ruby on Rails, backed by MySQL and Redis.
         tags: [ Ruby on Rails, jQuery, MySQL, Redis ]
 
   - title:    Web Application Developer
@@ -147,7 +183,7 @@ jobs:
       [VetRxDirect]:  http://vetrxdirect.com/
       [UpCity]:       http://upcity.com/
 
-    tags: [ Ruby on Rails, PHP 5, Prototype, MySQL ]
+    tags: [ Ruby on Rails, PHP, MySQL ]
 
   - title:    Software Developer
     company:  Digital Artefacts
@@ -155,13 +191,11 @@ jobs:
       start:  October 2008
       end:    July 2009
     desc: |
-      Designed and implemented an interface for uploading and manipulating
-      images for [CognitiveMedia], initially in Flash with a PHP backend, then
-      again in JavaScript and ASP.NET/C#.
+      I designed and implemented an interface for uploading and manipulating
+      images, initially in Flash with a PHP back-end, later rewriting it in
+      JavaScript and ASP.NET/C#.
 
-      [CognitiveMedia]: http://cognitiveme.com/
-
-    tags: [ ActionScript 3, PHP 5, JavaScript, C#, ASP.NET ]
+    tags: [ ActionScript, PHP, JavaScript, C#, ASP.NET ]
 
 education:
   - name:     Cornell College
