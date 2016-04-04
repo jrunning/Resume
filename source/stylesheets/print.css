@@ -1,6 +1,7 @@
 #inner { margin: auto; background: none; border: none; padding: 0 40px; }
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 a#pdf, .typekit-badge { display: none !important; }
+.contact-info { padding-top: 1em; }
 #hd { margin-top: 1em; }
 #hd h1, #hd h2 { letter-spacing: 0.03em; }
 #ft { padding-bottom: 1em; }
