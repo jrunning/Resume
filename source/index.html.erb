@@ -12,23 +12,27 @@
     <%= stylesheet_link_tag "reset-fonts-grids", "resume" , :media => "all"%>
     <%= stylesheet_link_tag "print" , :media => "print"%>
 
-    <script src="javascript/jquery-2.0.3.min.js" type="text/javascript"></script>
     <script src="javascript/hyphenator.js" type="text/javascript"></script>
     <script type="text/javascript">Hyphenator.config({ orphancontrol: 2 })</script>
     <script src="javascript/widowtamer-min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//use.typekit.net/awb7nrj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript">
-      $(function() {
-        var $tagElms = $("span[rel=tag][data-tag]")
+      document.addEventListener('DOMContentLoaded', function () {
+        var tagElms = Array.prototype.slice.call(document.querySelectorAll('span[rel=tag][data-tag]'));
+        var listener = function (evt) {
+          var elm = event.target;
+          var tag = elm.getAttribute('data-tag');
+          var isActive = elm.classList.contains('active');
 
-        $tagElms.on('click', function() {
-          var $elm = $(this)
-            , tag = $elm.data('tag')
-            , isActive = $elm.is('.active')
+          tagElms.forEach(function (other) {
+            if (other.getAttribute('data-tag') === tag) {
+              other.classList.toggle('active', !isActive);
+            }
+          });
+        };
 
-          $tagElms.filter("[data-tag='" + tag + "']").toggleClass('active', !isActive)
-        });
+        tagElms.forEach(function (elm) { elm.addEventListener('click', listener); });
       })
     </script>
   </head>
