@@ -4,6 +4,7 @@ require 'maruku'
 require 'makepdf'
 
 activate :livereload
+
 ###
 # Compass
 ###
@@ -64,12 +65,24 @@ helpers do
     end
   end
 
+  def md(str)
+    Maruku.new(str).to_html
+  end
+
   def stub_tag(str)
     str.downcase.gsub(/[^a-z0-9]+/, " ").strip.gsub(/\s+/, "-")
   end
 
   def tag_el(str)
     %Q{<span rel="tag" data-tag="#{stub_tag str}">#{str}</span>}
+  end
+
+  def tags(tags_arr)
+    <<-END
+      <span class="tags donthyphenate">
+        #{tags_arr.map {|tag| tag_el(tag) }.join}
+      </span>
+    END
   end
 
   def widont(str)
@@ -85,6 +98,7 @@ set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do
+  ignore 'fonts/*.txt'
   # For example, change the Compass output style for deployment
   # activate :minify_css
 
