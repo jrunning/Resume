@@ -26,44 +26,51 @@ skills:
   - name: Back-End Craftsmanship
     desc: |
       A diverse background gives me the ability to choose the right tool for
-      any job, be it Ruby on Rails for a classic CRUD app, Express for a
-      lightweight API, or something entirely different. Broad expertise lets me
-      iterate--and pick up any skill--rapidly and consistently.
+      any job, be it a classic CRUD app, an API-driven single-page app,
+      something in the middle or something else entirely. Broad expertise lets
+      me iterate---and pick up any skill---rapidly and consistently.
 
   - name: Front-End Expertise
     desc: |
       An application isn't worth building if the user experience is frustrating
-      and inconsistent. An eye for UX and mastery of modern tools and
-      best practices enable me put the user first as a rule, not an exception.
+      and inconsistent. An eye for UX and mastery of modern tools and best
+      practices enable me to put user experience and engagement first as a
+      rule, not an exception.
 
   - name: Communication & Collaboration
     desc: |
       Writing and speaking clearly about complex and subtle ideas is key to my
       effectiveness as a team player, as is recognizing my teammates' strengths
-      and seeking out opportunities to share my own skills and knowledge.
+      and seeking out opportunities to share skills and knowledge through
+      mentorship and pair programming.
 
 alphabetsoup:
-  - [ JavaScript        , •••• ]
-  - [ Node.js           , •••  ]
-  - [ React             , •••  ]
-  - [ AngularJS         , ••   ]
-  - [ Backbone.js       , •••  ]
-  - [ jQuery            , •••• ]
-  - [ Git               , •••  ]
-  - [ Ruby              , •••• ]
-  - [ Ruby on Rails     , •••• ]
-  - [ HTML5 & CSS       , •••• ]
-  - [ Mac OS X          , •••• ]
-  - [ Linux             , •••  ]
-  - [ Windows           , ••   ]
+  - [ Ruby          , 5 ]
+  - [ Ruby on Rails , 5 ]
+  - [ HTML5 & CSS   , 5 ]
+  - [ MySQL         , 5 ]
+  - [ PostgreSQL    , 4 ]
+  - [ PHP           , 2 ]
+
+  - [ JavaScript    , 5 ]
+  - [ React         , 4 ]
+  - [ AngularJS     , 3 ]
+  - [ Backbone.js   , 3 ]
+  - [ jQuery        , 3 ]
+  - [ Node.js       , 4 ]
+
+  - [ Git           , 4 ]
+  - [ Mac OS X      , 5 ]
+  - [ Linux         , 3 ]
+  - [ Windows       , 2 ]
 
 links:
   - name: GitHub
     url:  https://github.com/jrunning
   - name: Stack Overflow
-    url:  http://careers.stackoverflow.com/jordan
+    url:  https://careers.stackoverflow.com/jordan
   - name: LinkedIn
-    url:  http://linkedin.com/in/jordanrunning
+    url:  https://linkedin.com/in/jordanrunning
 
 jobs:
   - title:    Software Development Engineer II
@@ -79,21 +86,18 @@ jobs:
 
     tasks:
       - desc: |
-          I joined the Chef Analytics team at a critical time to help turn a
-          prototype into a shipped product on a tight deadline. Working closely
-          with product managers, designers and UX engineers I subsequently
-          built new components in React using ES2015 (ES6), helped execute a
-          UX-driven redesign, and maintained "legacy" AngularJS components.
+          I joined the Chef Analytics team to help turn a Ruby on Rails and
+          AngularJS prototype into a shipped product on a tight deadline.
+          Subsequently I worked closely with product managers and designers
+          to refine functionality, build new features in React, and execute a
+          UX-driven redesign.
 
-          I championed best practices in testing and empowered the team as
-          principal maintainer of a Grunt- and Webpack-based build workflow
-          that included a Node.js and RAML-based data-mocking environment and
-          Mocha test suite. I also provided technical guidance and assistance
-          to teammates, on both the front-end and the Ruby on Rails back-end,
-          including pair-programming with new and junior teammates.
+          I championed best practices and empowered the team as principal
+          maintainer of a Grunt- and Webpack-based build-and-test workflow. I
+          also aided the implementation of the Rails back-end through technical
+          guidance and pair programming.
 
-        tags: [ React, AngularJS, Ruby on Rails, ES2015, Mocha, Webpack,
-                Bootstrap ]
+        tags: [ React, AngularJS, Ruby on Rails, ES2015, Mocha, Webpack, Bootstrap ]
 
       - desc: |
           On the Workflow Pool team I delivered customer-driven enhancements
@@ -184,18 +188,6 @@ jobs:
       [UpCity]:       http://upcity.com/
 
     tags: [ Ruby on Rails, PHP, MySQL ]
-
-  - title:    Software Developer
-    company:  Digital Artefacts
-    dates:
-      start:  October 2008
-      end:    July 2009
-    desc: |
-      I designed and implemented an interface for uploading and manipulating
-      images, initially in Flash with a PHP back-end, later rewriting it in
-      JavaScript and ASP.NET/C#.
-
-    tags: [ ActionScript, PHP, JavaScript, C#, ASP.NET ]
 
 education:
   - name:     Cornell College

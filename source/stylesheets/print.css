@@ -1,5 +1,7 @@
-#inner { background: none; margin: auto; }
+#inner { margin: auto; background: none; border: none; padding: 0 40px; }
 a { text-decoration: none; }
 a#pdf, .typekit-badge { display: none !important; }
-#hd h1 { letter-spacing: 0.03em; }
-#hd h2 { letter-spacing: 0.03em; }
+#hd { margin-top: 1em; }
+#hd h1, #hd h2 { letter-spacing: 0.03em; }
+#ft { padding-bottom: 1em; }
+.soup .skill::before { color: inherit; }
