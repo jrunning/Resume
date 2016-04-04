@@ -4,14 +4,20 @@
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, clean, sans-serif;
-  color: #444;
+  color: #333;
 }
 #inner { padding: 10px 80px; margin: 80px auto; background: #e8fffa; border: solid #037575; border-width: 8px 0 2px 0; }
-section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+section {
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #ccc;
+}
 
 /* //-- header, body, footer -- */
 #hd {
-  margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc;
+  margin: 2.5em 0 1.5em 0;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #ccc;
 }
 #hd h1 {
   font-size: 64px;
@@ -24,16 +30,24 @@ section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc
 }
 
 /* //-- footer -- */
-#ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
+#ft {
+  padding: 1em 0 5em 0;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  font-size: 122%;
+}
+
 #ft ul {
   display: inline-block;
   margin-bottom: 0 auto;
   list-style-type: none;
 }
+
 #ft ul li {
   display: block;
   float: left;
 }
+
 #ft ul li:not(:last-child)::after {
   display: inline-block;
   content: "\2022";
@@ -42,9 +56,15 @@ section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc
 }
 
 /* //-- core typography and style -- */
-h1, h2 { font-family: "ff-enzo-web", Helvetica, Arial, clean, sans-serif; }
-h2 { font-size: 167%; }
-h3, h4 { font-size: 122%; }
+h1, h2, h3, .skill, #ft {
+  font-family: "ff-enzo-web", "Helvetica Neue", Helvetica, Arial, clean, sans-serif;
+}
+h2 {
+  font-size: 167%;
+  page-break-inside: avoid;
+  letter-spacing: 0.05em;
+}
+h3, h4 { font-size: 133%; }
 h1, h2, h3, h4 { color: #333; }
 .skill, p, .talent li {
   font-size: 15px
@@ -55,14 +75,14 @@ p {
 }
 p:empty { display: none; }
 a { color: #4f4538; }
-a:hover { text-decoration: none; }
+a:hover { color: black; }
 strong { font-weight: bold; }
 li { line-height: 24px; }
 p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
 p.enlarge span { color: #000 }
-h2 {
+.yui-gf div.first h2 {
   font-style: italic;
-  letter-spacing: 0.08em;
+  padding-right: 10px;
 }
 .last {
   border-bottom: 0;
@@ -83,37 +103,66 @@ a#pdf {
   text-decoration: none;
 }
 
-a#pdf:hover { background: #222; }
+a#pdf:hover {
+  background: #222;
+  text-decoration: none;
+}
+
+.summary {
+  font-size: 16px;
+}
 
 .talent > * {
   padding-right: 1rem;
 }
-.job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
+
+.job {
+  position: relative;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+.job h2 { font-style: normal; }
 .job h4 { position: absolute; top: 0.35em; right: 0 }
 .job p { margin: 0.75em 0 1em 0; text-align: justify; }
+
 .job li {
   list-style: square inside;
-  line-height: default;
+  line-height: normal;
   border-bottom: none;
   margin-left: .5em;
   padding-left: 1em;
-  text-indent: -1em;
 }
 .job li p { margin-left: 0; }
+.job li p:first-child {
+  text-indent: -1em;
+}
 .job:last-child {
   border: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-.job .desc > ul > li:last-child p { margin-bottom: .5em }
+.job .desc p strong {
+  font-weight: normal;
+  color: #01262D;
+}
+
+.job p:last-child { margin-bottom: .5em; }
+.job ul.desc > li:last-child p:last-child { margin-bottom: 0 }
+.job .desc li { page-break-inside: avoid; }
 
 .job .tags {
   font-size: 14px;
-  display: inline-block;
+  vertical-align: text-bottom;
   page-break-before: avoid;
 }
-.job p .tags { padding-left: 1em; }
+
+.job p + .tags {
+  display: block;
+  margin-top: -.5em;
+}
 
 .job .tags [rel=tag] {
   cursor: pointer;
@@ -122,58 +171,105 @@ a#pdf:hover { background: #222; }
   background-color: rgba(2,75,90,0.2);
   padding: 2px 4px;
   text-indent: 0;
-  margin: .2em;
+  margin: 0 .4em .3em 0;
   box-sizing: border-box;
   page-break-before: avoid;
 }
 
+.job .tags [rel=tag]:hover {
+  background-color: rgba(2,100,120,0.4);
+}
+
 .job .tags [rel=tag].active {
-  background-color: rgba(98,142,15,1);
+  background-color: #037575;
   color: #fafafa;
-  text-shadow: -1px -1px rgba(0,0,0,0.5);
 }
 
 .talent { width: 32%; float: left }
-.talent h2 { margin-bottom: 6px; }
+.talent h2 {
+  margin-bottom: 6px;
+  font-style: normal;
+  line-height: 26px;
+  min-height: 52px;
+}
 .talent p { text-align: justify; }
 
 .soup ul { width: 32%; float: left; }
 .soup li {
-  padding-left: .33rem;
-  padding-right: 2.5rem;
+  font-size: 16px;
+  line-height: 26px;
+  padding-right: .33rem;
   margin-right: .5rem;
 }
-.soup li::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.soup li > [rel=tag] {
-  float: left;
-}
-.soup li > .skill-rank {
-  font-size: 112%;
-  margin-right: -2.167rem;
-  float: right;
-}
+
 .soup li:nth-child(2n+1) {
   background-color: rgba(0,0,0,0.05);
 }
+
+.soup .skill::before {
+  display: inline-block;
+  padding-left: .1em;
+  padding-right: .1em;
+  text-align: right;
+  vertical-align: bottom;
+  font-size: 28px;
+  letter-spacing: -.05em;
+  width: 44px;
+  color: #037575;
+}
+
+.soup .skill-rank-5::before { content: '•••••'; }
+.soup .skill-rank-4::before { content: '••••'; }
+.soup .skill-rank-3::before { content: '•••'; }
+.soup .skill-rank-2::before { content: '••'; }
+.soup .skill-rank-1::before { content: '•'; }
 
 .links {
   list-style-type: none;
   font-size: 16px;
 }
+
 .links li {
-  float: left;
-  width: 32%;
+  line-height: 26px;
 }
+
+.links a {
+  position: relative;
+}
+
+.links a::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 'FortAwesome';
+  font-size: 16px;
+  width: 1.29em;
+  text-align: center;
+}
+
+.links a::after {
+  position: absolute;
+  left: 150px;
+  content: attr(href);
+  font-size: 90%;
+}
+
+.links a[href^='https://github.com/']::before {
+  content: '\f000';
+}
+
+.links a[href^='https://careers.stackoverflow.com/']::before {
+  content: '\f001';
+}
+
+.links a[href^='https://linkedin.com/']::before {
+  content: '\f002';
+}
+
 #srt-ttab { margin-bottom: 100px; text-align: center;  }
 #srt-ttab img.last { margin-top: 20px }
 
 /* --// override to force 1/8th width grids -- */
 .yui-gf .yui-u{width:80.2%;}
-.yui-gf div.first{width:19.8%;}
+.yui-gf div.first{ width:19.8%; }
 
 div.no-page-breaker {
     page-break-inside: avoid;

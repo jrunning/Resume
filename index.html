@@ -9,27 +9,31 @@
 
     <title>Jordan Running</title>
 
-    <link type="text/css" media="all" rel="stylesheet" href="stylesheets/reset-fonts-grids.css" />
-<link type="text/css" media="all" rel="stylesheet" href="stylesheets/resume.css" />
-    <link type="text/css" media="print" rel="stylesheet" href="stylesheets/print.css" />
+    <link href="stylesheets/reset-fonts-grids.css" rel="stylesheet" type="text/css" media="all" /><link href="stylesheets/resume.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
 
-    <script src="javascript/jquery-2.0.3.min.js" type="text/javascript"></script>
+    <script src="https://use.fonticons.com/677c6ac2.js"></script>
     <script src="javascript/hyphenator.js" type="text/javascript"></script>
     <script type="text/javascript">Hyphenator.config({ orphancontrol: 2 })</script>
     <script src="javascript/widowtamer-min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//use.typekit.net/awb7nrj.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript">
-      $(function() {
-        var $tagElms = $("span[rel=tag][data-tag]")
+      document.addEventListener('DOMContentLoaded', function () {
+        var tagElms = Array.prototype.slice.call(document.querySelectorAll('span[rel=tag][data-tag]'));
+        var listener = function (evt) {
+          var elm = event.target;
+          var tag = elm.getAttribute('data-tag');
+          var isActive = elm.classList.contains('active');
 
-        $tagElms.on('click', function() {
-          var $elm = $(this)
-            , tag = $elm.data('tag')
-            , isActive = $elm.is('.active')
+          tagElms.forEach(function (other) {
+            if (other.getAttribute('data-tag') === tag) {
+              other.classList.toggle('active', !isActive);
+            }
+          });
+        };
 
-          $tagElms.filter("[data-tag='" + tag + "']").toggleClass('active', !isActive)
-        });
+        tagElms.forEach(function (elm) { elm.addEventListener('click', listener); });
       })
     </script>
   </head>
@@ -41,16 +45,14 @@
         <section id="hd" class="yui-gc vcard">
           <div class="yui-u first">
             <h1 class="fn">Jordan Running</h1>
-            <h2>I Make Web Apps.</h2>
+            <h2>I Make Apps.</h2>
           </div>
 
           <div class="yui-u">
             <div class="contact-info">
               <h3><a id="pdf" href="resume.pdf">Download PDF</a></h3>
               <h3><a class="email" href="mailto:jr@jordanrunning.com">jr@jordanrunning.com</a></h3>
-              
                 <h3 class="tel">(925) 567-3267</h3>
-              
               <span class="adr">
                 <h3>
                   <span class="street-address"></span>
@@ -68,8 +70,10 @@
                 <div class="yui-u first">
                   <h2>What I&nbsp;Do</h2>
                 </div>
-                <div class="yui-u">
-                  <p class="summary hyphenate"><p>I solve tough problems, without creating new ones, by applying a broad skillset developed through constant iteration and passion for the craft of web development.</p></p>
+                <div class="yui-u summary hyphenate">
+                  
+<p>I solve tough problems by applying a broad skillset developed through more than a decade of passion for the craft of software engineering and web development.</p>
+
                 </div>
               </section><!--// .yui-gf -->
 
@@ -78,22 +82,24 @@
                   <h2>How I Do&nbsp;It</h2>
                 </div>
                 <div class="yui-u">
-                  
                     <div class="talent hyphenate">
-                      <h2>Front-End Craftsmanship</h2>
-                      <p>A flawless back-end isn&#8217;t worth building if the user experience is frustrating and inconsistent. Modern tools and methodology enable me put the user first as a rule, not an exception.</p></p>
+                      <h2>Back-End Craftsmanship</h2>
+                      
+<p>A diverse background gives me the ability to choose the right tool for any job, be it a classic CRUD app, an API-driven single-page app, something in the middle or something else entirely. Broad expertise lets me iterate—and pick up any skill—rapidly and consistently.</p>
+
                     </div>
-                  
                     <div class="talent hyphenate">
-                      <h2>Back-End Fundamentals</h2>
-                      <p>Expertise in Ruby and Ruby on Rails lets me do great work, but also tells me when they&#8217;re not the best tools for the job. My diverse background gives me the ability to pick up the tools I don&#8217;t yet know, quickly.</p></p>
+                      <h2>Front-End Expertise</h2>
+                      
+<p>An application isn’t worth building if the user experience is frustrating and inconsistent. An eye for UX and mastery of modern tools and best practices enable me to put user experience and engagement first as a rule, not an exception.</p>
+
                     </div>
-                  
                     <div class="talent hyphenate">
                       <h2>Communication & Collaboration</h2>
-                      <p>Writing and speaking clearly about complex and subtle ideas is essential to being an effective team member, as is recognizing my teammates&#8217; strengths and opportunities to share my own skills and knowledge.</p></p>
+                      
+<p>Writing and speaking clearly about complex and subtle ideas is key to my effectiveness as a team player, as is recognizing my teammates’ strengths and seeking out opportunities to share skills and knowledge through mentorship and pair programming.</p>
+
                     </div>
-                  
                 </div>
               </section><!--// .yui-gf -->
 
@@ -102,97 +108,60 @@
                   <h2>What I've&nbsp;Used</h2>
                 </div>
                 <div class="yui-u soup">
-                  
-                  
-                    
-                      <ul>
-                    
-                        <li class="skill">
-                          <span rel="tag">JavaScript</span>
-                          <span class="skill-rank">••••</span>
+                    <ul>
+                        <li rel="tag" class="skill skill-rank-5">
+                          Ruby
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">Backbone.js</span>
-                          <span class="skill-rank">•••</span>
+                        <li rel="tag" class="skill skill-rank-5">
+                          Ruby on Rails
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">jQuery</span>
-                          <span class="skill-rank">••••</span>
+                        <li rel="tag" class="skill skill-rank-5">
+                          HTML5 & CSS
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">Git</span>
-                          <span class="skill-rank">•••</span>
+                        <li rel="tag" class="skill skill-rank-5">
+                          MySQL
                         </li>
-                    
-                      </ul>
-                    
-                  
-                    
-                      <ul>
-                    
-                        <li class="skill">
-                          <span rel="tag">Ruby</span>
-                          <span class="skill-rank">••••</span>
+                        <li rel="tag" class="skill skill-rank-4">
+                          PostgreSQL
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">Ruby on Rails</span>
-                          <span class="skill-rank">••••</span>
+                        <li rel="tag" class="skill skill-rank-2">
+                          PHP
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">HTML5</span>
-                          <span class="skill-rank">••••</span>
+                    </ul>
+                    <ul>
+                        <li rel="tag" class="skill skill-rank-5">
+                          JavaScript
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">CSS3</span>
-                          <span class="skill-rank">••</span>
+                        <li rel="tag" class="skill skill-rank-4">
+                          React
                         </li>
-                    
-                      </ul>
-                    
-                  
-                    
-                      <ul>
-                    
-                        <li class="skill">
-                          <span rel="tag">Mac OS X</span>
-                          <span class="skill-rank">••••</span>
+                        <li rel="tag" class="skill skill-rank-3">
+                          AngularJS
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">Linux</span>
-                          <span class="skill-rank">•••</span>
+                        <li rel="tag" class="skill skill-rank-3">
+                          Backbone.js
                         </li>
-                    
-                  
-                    
-                        <li class="skill">
-                          <span rel="tag">Windows</span>
-                          <span class="skill-rank">••</span>
+                        <li rel="tag" class="skill skill-rank-3">
+                          jQuery
                         </li>
-                    
-                      </ul>
-                    
-                  
+                        <li rel="tag" class="skill skill-rank-4">
+                          Node.js
+                        </li>
+                    </ul>
+                    <ul>
+                        <li rel="tag" class="skill skill-rank-4">
+                          Git
+                        </li>
+                        <li rel="tag" class="skill skill-rank-5">
+                          Mac OS X
+                        </li>
+                        <li rel="tag" class="skill skill-rank-3">
+                          Linux
+                        </li>
+                        <li rel="tag" class="skill skill-rank-2">
+                          Windows
+                        </li>
+                    </ul>
                 </div>
               </section><!--// .yui-gf-->
 
@@ -202,21 +171,64 @@
                 </div><!--// .yui-u -->
 
                 <div class="yui-u vcalendar">
-                  
+                    <div class="job experience vevent">
+                      <h2 class="location">Chef Software, Inc.</h2>
+                      <h3 class="summary">Software Development Engineer II</h3>
+                      <h4>
+                        <abbr class="dtstart" title="January 2014">January 2014</abbr> –
+                        <abbr class="dtend" title="April 2016">April 2016</abbr>
+                      </h4>
+                        <div class="hyphenate desc">
+                          
+<p>Infrastructure automation leader Chef is an engineering-driven company that embraces agile methodology, kanban, and pair programming. There I contributed to some of Chef’s most crucial user-facing software:</p>
+
+                          
+                        </div>
+                        <ul class="desc">
+                            <li>
+                                <p class="hyphenate">I joined the Chef Analytics team to help turn a Ruby on Rails and AngularJS prototype into a shipped product on a tight deadline. Subsequently I worked closely with product managers and designers to refine functionality, build new features in React, and execute a UX-driven redesign.
+                                  
+                                </p>
+
+                                <p class="hyphenate">I championed best practices and empowered the team as principal maintainer of a Grunt- and Webpack-based build-and-test workflow. I also aided the implementation of the Rails back-end through technical guidance and pair programming.
+                                        <span class="tags donthyphenate">
+        <span rel="tag" data-tag="react">React</span><span rel="tag" data-tag="angularjs">AngularJS</span><span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="es2015">ES2015</span><span rel="tag" data-tag="mocha">Mocha</span><span rel="tag" data-tag="webpack">Webpack</span><span rel="tag" data-tag="bootstrap">Bootstrap</span>
+      </span>
+
+                                </p>
+                            </li>
+                            <li>
+                                <p class="hyphenate">On the Workflow Pool team I delivered customer-driven enhancements and fixes for Chef’s core products and workflow tools. I wrote comprehensive RSpec tests to not only cover new code but also to improve coverage and maintainability of existing code.
+                                        <span class="tags donthyphenate">
+        <span rel="tag" data-tag="ruby">Ruby</span><span rel="tag" data-tag="rspec">RSpec</span><span rel="tag" data-tag="chef">Chef</span>
+      </span>
+
+                                </p>
+                            </li>
+                            <li>
+                                <p class="hyphenate">I implemented UX enhancements and bug fixes for the web-based infrastructure management console Chef Manage using Ruby on Rails and Backbone.js, with comprehensive tests in RSpec and Mocha.
+                                        <span class="tags donthyphenate">
+        <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="backbone-js">Backbone.js</span><span rel="tag" data-tag="mocha">Mocha</span><span rel="tag" data-tag="coffeescript">CoffeeScript</span><span rel="tag" data-tag="bootstrap">Bootstrap</span><span rel="tag" data-tag="postgresql">PostgreSQL</span>
+      </span>
+
+                                </p>
+                            </li>
+                        </ul>
+                  </div>
                     <div class="job experience vevent">
                       <h2 class="location">Pearson</h2>
                       <h3 class="summary">Contract Software Engineer</h3>
                       <h4>
                         <abbr class="dtstart" title="July 2012">July 2012</abbr> –
-                        <abbr class="dtend" title="Present">Present</abbr>
+                        <abbr class="dtend" title="December 2013">December 2013</abbr>
                       </h4>
-                      
                         <div class="hyphenate desc">
-                          <p>I built SAFE, a Rails application that ensures administrators of company systems and facilities are notified and take appropriate action upon the end of employees&#8217; and contractors&#8217; employment. Its features include:</p>
+                          
+<p>I built a Rails application that notifies administrators of company systems and facilities when a worker’s employment ends and ensures that they take appropriate action. Its features include:</p>
 
 <ul>
 <li>
-<p>Retrieving and classifying &#8220;termination&#8221; records from H.R.&#8217;s Oracle database of tens of thousands of workers.</p>
+<p>Retrieving and classifying “termination” records from H.R.‘s Oracle database of tens of thousands of workers.</p>
 </li>
 
 <li>
@@ -224,21 +236,20 @@
 </li>
 
 <li>
-<p>Asynchronously processing uploaded CSV files containing account records and matching them to H.R. records. Records are matched by user-configured fields and, in the absence of an exact match, close matches (selected by a &#8220;fuzzy matching&#8221; routine implemented with Sphinx) are presented to the user for confirmation.</p>
+<p>Processing uploaded CSV data and matching it to H.R. records by user-configured fields or, in the absence of an exact match, via “fuzzy” matching implemented in Sphinx.</p>
 </li>
 
 <li>
-<p>A front-end using Backbone.js and Bootstrap, with a focus on usability and responsiveness (both challenges when presenting hundreds of records and complex configuration options to the user).</p>
+<p>A fast and usable Backbone.js front-end for managing hundreds or thousands of records and complex configuration options.</p>
 </li>
 </ul>
 
-                          <span class="tags donthyphenate">
-                            <span rel="tag" data-tag="backbone-js">Backbone.js</span><span rel="tag" data-tag="bootstrap">Bootstrap</span><span rel="tag" data-tag="css3">CSS3</span><span rel="tag" data-tag="delayed-job">Delayed::Job</span><span rel="tag" data-tag="handlebars-js">Handlebars.js</span><span rel="tag" data-tag="jquery">jQuery</span><span rel="tag" data-tag="mysql">MySQL</span><span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="sphinx">Sphinx</span>
-                          </span>
+                                <span class="tags donthyphenate">
+        <span rel="tag" data-tag="coffeescript">CoffeeScript</span><span rel="tag" data-tag="backbone-js">Backbone.js</span><span rel="tag" data-tag="bootstrap">Bootstrap</span><span rel="tag" data-tag="delayed-job">Delayed::Job</span><span rel="tag" data-tag="handlebars-js">Handlebars.js</span><span rel="tag" data-tag="jquery">jQuery</span><span rel="tag" data-tag="mysql">MySQL</span><span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="sphinx">Sphinx</span>
+      </span>
+
                         </div>
-                      
                   </div>
-                
                     <div class="job experience vevent">
                       <h2 class="location">Independent Contractor</h2>
                       <h3 class="summary">Software Engineer</h3>
@@ -246,45 +257,33 @@
                         <abbr class="dtstart" title="October 2010">October 2010</abbr> –
                         <abbr class="dtend" title="July 2012">July 2012</abbr>
                       </h4>
-                      
                         <ul class="desc">
-                          
                             <li>
-                              <p class="hyphenate">Designed and implemented a registration app for merchant services clients of <a href='http://tagcreativestudio.com/'>Tag Creative Studio</a>. The five-step wizard had more than 70 interdependent fields and strict validation on the front- and back-end.
-                                <span class="tags donthyphenate">
-                                  <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="jquery">jQuery</span><span rel="tag" data-tag="css3">CSS3</span><span rel="tag" data-tag="mysql">MySQL</span>
-                                </span>
-                              </p>
+                                <p class="hyphenate">Designed and implemented a registration app for merchant services clients of <a href="http://tagcreativestudio.com/">Tag Creative Studio</a>. The five-step wizard had more than 70 interdependent fields and strict validation on the front- and back-end.
+                                        <span class="tags donthyphenate">
+        <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="jquery">jQuery</span><span rel="tag" data-tag="mysql">MySQL</span>
+      </span>
+
+                                </p>
                             </li>
-                          
                             <li>
-                              <p class="hyphenate">Implemented from a precise specification a Node.js application for initializing, managing and communicating with other applications as directed by remote clients using JSON commands over a socket interface.
-                                <span class="tags donthyphenate">
-                                  <span rel="tag" data-tag="node-js">Node.js</span>
-                                </span>
-                              </p>
+                                <p class="hyphenate">Implemented, from a precise specification, a Node.js application for initializing, managing and communicating with other applications as directed by remote clients using JSON commands over a socket interface.
+                                        <span class="tags donthyphenate">
+        <span rel="tag" data-tag="node-js">Node.js</span>
+      </span>
+
+                                </p>
                             </li>
-                          
                             <li>
-                              <p class="hyphenate">Prototyped a web front-end and Node.js back-end for a Redis-backed English–Spanish translation database for <a href='http://componica.com/'>Componica</a>.
-                                <span class="tags donthyphenate">
-                                  <span rel="tag" data-tag="node-js">Node.js</span><span rel="tag" data-tag="redis">Redis</span>
-                                </span>
-                              </p>
+                                <p class="hyphenate">Designed and prototyped a social networking and live chat product in Ruby on Rails, backed by MySQL and Redis.
+                                        <span class="tags donthyphenate">
+        <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="jquery">jQuery</span><span rel="tag" data-tag="mysql">MySQL</span><span rel="tag" data-tag="redis">Redis</span>
+      </span>
+
+                                </p>
                             </li>
-                          
-                            <li>
-                              <p class="hyphenate">Designed and prototyped a social networking and live chat product in Ruby on Rails, backed by MySQL and Redis.
-                                <span class="tags donthyphenate">
-                                  <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="jquery">jQuery</span><span rel="tag" data-tag="mysql">MySQL</span><span rel="tag" data-tag="redis">Redis</span>
-                                </span>
-                              </p>
-                            </li>
-                          
                         </ul>
-                      
                   </div>
-                
                     <div class="job experience vevent">
                       <h2 class="location">Cramer Development</h2>
                       <h3 class="summary">Web Application Developer</h3>
@@ -292,11 +291,11 @@
                         <abbr class="dtstart" title="July 2009">July 2009</abbr> –
                         <abbr class="dtend" title="September 2010">September 2010</abbr>
                       </h4>
-                      
                         <div class="hyphenate desc">
-                          <ul>
+                          
+<ul>
 <li>
-<p>Developed and maintained large, public-facing web applications like DIYSEO (now <a href='http://upcity.com/'>UpCity</a>) and e-commerce sites like <a href='http://vetrxdirect.com/'>VetRxDirect</a> in Ruby on Rails and PHP.</p>
+<p>Developed and maintained large, public-facing web applications like DIYSEO (now <a href="http://upcity.com/">UpCity</a>) and e-commerce sites like <a href="http://vetrxdirect.com/">VetRxDirect</a> in Ruby on Rails and PHP.</p>
 </li>
 
 <li>
@@ -308,46 +307,25 @@
 </li>
 
 <li>
-<p>Worked directly with clients for whom an hour&#8217;s downtime equaled thousands of dollars&#8217; lost revenue.</p>
+<p>Worked directly with clients for whom an hour’s downtime equaled thousands of dollars’ lost revenue.</p>
 </li>
 </ul>
 
-                          <span class="tags donthyphenate">
-                            <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="php-5">PHP 5</span><span rel="tag" data-tag="prototype">Prototype</span><span rel="tag" data-tag="mysql">MySQL</span>
-                          </span>
-                        </div>
-                      
-                  </div>
-                
-                    <div class="job experience vevent">
-                      <h2 class="location">Digital Artefacts</h2>
-                      <h3 class="summary">Software Developer</h3>
-                      <h4>
-                        <abbr class="dtstart" title="October 2008">October 2008</abbr> –
-                        <abbr class="dtend" title="July 2009">July 2009</abbr>
-                      </h4>
-                      
-                        <div class="hyphenate desc">
-                          <p>Designed and implemented an interface for uploading and manipulating images for <a href='http://cognitiveme.com/'>CognitiveMedia</a>, initially in Flash with a PHP backend, then again in JavaScript and ASP.NET/C#.</p>
+                                <span class="tags donthyphenate">
+        <span rel="tag" data-tag="ruby-on-rails">Ruby on Rails</span><span rel="tag" data-tag="php">PHP</span><span rel="tag" data-tag="mysql">MySQL</span>
+      </span>
 
-                          <span class="tags donthyphenate">
-                            <span rel="tag" data-tag="actionscript-3">ActionScript 3</span><span rel="tag" data-tag="php-5">PHP 5</span><span rel="tag" data-tag="javascript">JavaScript</span><span rel="tag" data-tag="c">C#</span><span rel="tag" data-tag="asp-net">ASP.NET</span>
-                          </span>
                         </div>
-                      
                   </div>
-                
                 </div><!--// .yui-u -->
               </section><!--// .yui-gf -->
 
-              
                 <section class="yui-gf">
                   <div class="yui-u first">
                     <h2>Where I&nbsp;Studied</h2>
                   </div>
                   <div class="yui-u" class="vcalendar">
                     <div class="no-page-breaker">
-                      
                         <p class="education vevent summary vcard">
                           From <abbr class="dtstart" title="2000">2000</abbr>
                           to <abbr class="dtend" title="2004">2004</abbr>
@@ -355,11 +333,9 @@
                           in <span class="adr"><span class="locality">Mount Vernon</span>, <span class="region">IA</span></span>
                           and earned a B.A. in Computer Science and Art.
                         </p>
-                      
                     </div>
                   </div>
                 </section><!--// .yui-gf -->
-              
 
             <section class="yui-gf last">
               <div class="yui-u first">
@@ -368,13 +344,9 @@
 
               <div class="yui-u">
                 <ul class="links no-page-breaker">
-                  
-                    <li><a href="http://github.com/jrunning">jrunning on GitHub</a></li>
-                  
-                    <li><a href="http://careers.stackoverflow.com/jordan">Stack Overflow</a></li>
-                  
-                    <li><a href="http://linkedin.com/in/jordanrunning">LinkedIn</a></li>
-                  
+                    <li><a href="https://github.com/jrunning">GitHub</a></li>
+                    <li><a href="https://careers.stackoverflow.com/jordan">Stack Overflow</a></li>
+                    <li><a href="https://linkedin.com/in/jordanrunning">LinkedIn</a></li>
                 </ul>
               </div><!--// .yui-u -->
             </section><!--// .yui-gf -->
