@@ -2,6 +2,8 @@ module PdfMaker
     class << self
         def registered(app)
             app.after_build do |builder|
+              outfile = "build/Jordan Running - Resume.pdf"
+
                 begin
                     require 'pdfkit'
 
@@ -14,13 +16,13 @@ module PdfMaker
                                 :print_media_type => true,
                                 :dpi => 96)
 
-                    file = kit.to_file('build/resume.pdf')
+                    file = kit.to_file(outfile)
 
                     rescue Exception =>e
                         builder.say_status "PDF Maker",  "Error: #{e.message}", Thor::Shell::Color::RED
                         raise
                     end
-                    builder.say_status "PDF Maker",  "PDF file available at build/resume.pdf"
+                    builder.say_status "PDF Maker",  "PDF file available at #{outfile}"
                 end
 
 
